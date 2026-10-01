@@ -1,1 +1,1169 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-Content-Type-Options" content="nosniff" />
+<meta name="referrer" content="strict-origin-when-cross-origin" />
+<title>DollarHub BD — দ্রুত ও নিরাপদ ডলার রিচার্জ</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%230b0e11' stroke='%23f0b90b' stroke-width='3'/%3E%3Ctext x='50' y='70' font-size='60' font-weight='900' text-anchor='middle' fill='%23f0b90b' font-family='Arial'%3E%24%3C/text%3E%3C/svg%3E" />
+<style>
+:root{--primary:#f0b90b;--primary-dark:#d9a600;--dark:#0b0e11;--dark-2:#1e2329;--dark-3:#2b3139;--gray:#848e9c;--light:#fafafa;--border:#e6e8ea;--green:#0ecb81;--red:#f6465d;--blue:#1e88e5;--white:#fff;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Segoe UI','Noto Sans Bengali',Arial,sans-serif;color:var(--dark);line-height:1.7;background:var(--white);}
+a{text-decoration:none;color:inherit;}
+img{max-width:100%;display:block;}
+button,input,select,textarea{font-family:inherit;}
+.container{width:94%;max-width:1180px;margin:0 auto;}
+.promo-banner{background:linear-gradient(90deg,#f0b90b 0%,#ffd966 25%,#0ecb81 50%,#ffd966 75%,#f0b90b 100%);background-size:300% 100%;animation:promoSlide 6s linear infinite;padding:11px 0;text-align:center;overflow:hidden;border-bottom:2px solid #d9a600;}
+@keyframes promoSlide{0%{background-position:0% 50%;}100%{background-position:300% 50%;}}
+.promo-content{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;font-size:14.5px;font-weight:800;color:#0b0e11;line-height:1.4;}
+.promo-emoji{font-size:19px;animation:promoWiggle 1.5s ease-in-out infinite;display:inline-block;}
+@keyframes promoWiggle{0%,100%{transform:rotate(-8deg) scale(1);}50%{transform:rotate(8deg) scale(1.15);}}
+.promo-amount{background:#0b0e11;color:#f0b90b;padding:2px 10px;border-radius:6px;font-weight:900;}
+.promo-bot{background:#0b0e11;color:#0ecb81;padding:2px 10px;border-radius:6px;font-weight:900;}
+.promo-highlight{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;}
+.top-bar{background:linear-gradient(90deg,#0b0e11,#1e2329,#0b0e11);border-bottom:1px solid #2b3139;padding:9px 0;font-size:13.5px;}
+.top-bar-inner{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;}
+.top-item{display:inline-flex;align-items:center;gap:8px;color:#eaecef;font-weight:600;}
+.top-item .ico{width:22px;height:22px;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;}
+.top-item.nagad .ico{background:#f6465d;color:#fff;}
+.top-item.wa .ico{background:#25D366;color:#fff;}
+.top-item small{color:#848e9c;font-weight:400;margin-right:4px;}
+.top-item b{color:#F0B90B;letter-spacing:.3px;}
+.top-item a{color:#0ecb81;text-decoration:underline;}
+header{position:sticky;top:0;z-index:100;background:rgba(11,14,17,.96);backdrop-filter:blur(10px);border-bottom:1px solid #1e2329;}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0;}
+.logo-wrap{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:800;}
+.logo-svg{width:44px;height:44px;flex-shrink:0;}
+.logo-text{color:var(--primary);letter-spacing:-.3px;}
+.logo-text span{color:#fff;}
+.nav-links{display:flex;gap:24px;list-style:none;}
+.nav-links a{font-weight:500;color:#eaecef;font-size:15px;transition:.25s;}
+.nav-links a:hover{color:var(--primary);}
+.nav-right{display:flex;align-items:center;gap:10px;}
+.btn{display:inline-block;padding:11px 24px;border-radius:8px;font-weight:600;transition:.25s;cursor:pointer;border:none;font-size:15px;text-align:center;}
+.btn-primary{background:var(--primary);color:#0b0e11;}
+.btn-primary:hover{background:var(--primary-dark);transform:translateY(-2px);}
+.btn-outline{background:transparent;color:var(--primary);border:2px solid var(--primary);}
+.btn-outline:hover{background:var(--primary);color:#0b0e11;}
+.btn:disabled{opacity:.5;cursor:not-allowed;transform:none!important;}
+.admin-btn-top{background:rgba(240,185,11,.15);border:1.5px solid rgba(240,185,11,.45);color:#f0b90b;width:42px;height:42px;border-radius:10px;font-size:18px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:.25s;}
+.admin-btn-top:hover{background:#f0b90b;color:#0b0e11;transform:translateY(-2px);}
+.menu-toggle{display:none;font-size:26px;background:none;border:none;cursor:pointer;color:#fff;}
+.user-chip{display:flex;align-items:center;gap:8px;background:rgba(240,185,11,.1);border:1px solid rgba(240,185,11,.3);border-radius:30px;padding:5px 14px 5px 5px;cursor:pointer;transition:.2s;}
+.user-chip:hover{background:rgba(240,185,11,.2);}
+.user-chip img{width:30px;height:30px;border-radius:50%;border:1.5px solid var(--primary);}
+.user-chip span{color:#fff;font-size:13px;font-weight:600;max-width:100px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.hero{background:radial-gradient(circle at 20% 20%,rgba(240,185,11,.15),transparent 45%),radial-gradient(circle at 80% 80%,rgba(30,136,229,.15),transparent 45%),var(--dark);color:#fff;padding:60px 0 70px;overflow:hidden;}
+.hero-content{max-width:720px;margin:0 auto;text-align:center;}
+.hero-logo-svg{width:140px;height:140px;margin:0 auto 18px;filter:drop-shadow(0 0 30px rgba(240,185,11,.6));}
+.hero h1{font-size:38px;line-height:1.25;margin-bottom:16px;font-weight:800;letter-spacing:-1px;}
+.hero h1 span{color:var(--primary);}
+.hero p{font-size:16px;color:#b7bdc6;margin-bottom:28px;max-width:520px;margin-left:auto;margin-right:auto;}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
+.live-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(14,203,129,.12);color:var(--green);padding:6px 14px;border-radius:20px;font-size:13px;font-weight:600;margin-bottom:18px;border:1px solid rgba(14,203,129,.3);}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--green);animation:pulse 1.5s infinite;}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.hero-num-box{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-bottom:24px;}
+.hero-num-nagad{background:rgba(246,70,93,.12);border:1px solid rgba(246,70,93,.35);border-radius:10px;padding:12px 18px;}
+.hero-num-wa{background:rgba(37,211,102,.12);border:1px solid rgba(37,211,102,.35);border-radius:10px;padding:12px 18px;}
+.hero-num-box .label{font-size:11.5px;font-weight:700;letter-spacing:.5px;}
+.hero-num-nagad .label{color:#f6465d;}
+.hero-num-wa .label{color:#25D366;}
+.hero-num-box .num{font-size:19px;color:#fff;font-weight:800;letter-spacing:.5px;}
+section{padding:70px 0;}
+.section-head{text-align:center;max-width:680px;margin:0 auto 46px;}
+.section-head h2{font-size:32px;font-weight:800;margin-bottom:12px;letter-spacing:-.5px;}
+.section-head p{color:var(--gray);}
+.tag{display:inline-block;background:rgba(240,185,11,.15);color:#b8860b;padding:6px 16px;border-radius:20px;font-size:13px;font-weight:700;margin-bottom:14px;letter-spacing:.5px;}
+.platforms-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+.plat{background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:22px 18px;text-align:center;transition:.25s;cursor:pointer;position:relative;}
+.plat:hover{border-color:var(--primary);transform:translateY(-4px);box-shadow:0 12px 28px rgba(240,185,11,.15);}
+.plat-logo{width:56px;height:56px;border-radius:14px;margin:0 auto 12px;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800;color:#fff;}
+.plat h4{font-size:16px;margin-bottom:4px;}
+.plat small{color:var(--gray);font-size:12.5px;display:block;}
+.plat .rate{margin-top:12px;padding-top:12px;border-top:1px solid var(--border);font-size:13px;}
+.plat .rate b{color:var(--green);}
+.plat .stock{position:absolute;top:10px;right:10px;font-size:10px;padding:3px 8px;border-radius:10px;background:#e6f9f0;color:var(--green);font-weight:700;}
+.plat .stock.off{background:#fde8eb;color:var(--red);}
+.order-section{background:var(--light);}
+.order-wrap{max-width:720px;margin:0 auto;background:#fff;border-radius:18px;padding:36px;border:1px solid var(--border);box-shadow:0 10px 40px rgba(0,0,0,.05);}
+.steps{display:flex;justify-content:space-between;margin-bottom:30px;position:relative;}
+.steps::before{content:"";position:absolute;top:16px;left:12%;right:12%;height:2px;background:var(--border);z-index:0;}
+.step{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:6px;flex:1;}
+.step .num{width:34px;height:34px;border-radius:50%;background:#fff;border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;color:var(--gray);transition:.3s;}
+.step.active .num{background:var(--primary);border-color:var(--primary);color:#0b0e11;}
+.step span{font-size:11.5px;color:var(--gray);font-weight:600;text-align:center;}
+.step.active span{color:var(--dark);}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.form-group{margin-bottom:16px;}
+label{display:block;font-size:13.5px;font-weight:600;margin-bottom:6px;color:#404854;}
+label .req{color:var(--red);}
+input,textarea,select{width:100%;padding:12px 14px;border:1.5px solid var(--border);border-radius:9px;font-size:15px;background:#fff;transition:.2s;color:var(--dark);}
+input:focus,textarea:focus,select:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(240,185,11,.15);}
+textarea{resize:vertical;min-height:80px;}
+.hint{font-size:12.5px;color:var(--gray);margin-top:5px;}
+.amount-box{background:linear-gradient(135deg,#0b0e11,#1e2329);color:#fff;border-radius:12px;padding:20px;margin:18px 0;display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;}
+.amount-box div{text-align:center;}
+.amount-box small{font-size:11.5px;color:#848e9c;display:block;margin-bottom:4px;}
+.amount-box b{font-size:20px;color:var(--primary);font-weight:800;}
+.amount-box .total{color:var(--green);}
+.pay-box{background:#fffbf0;border:1.5px dashed var(--primary);border-radius:12px;padding:20px;margin:18px 0;}
+.pay-box h4{font-size:15px;margin-bottom:14px;color:#8b6a00;}
+.pay-methods{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.pay-item{background:#fff;border:1px solid var(--border);border-radius:10px;padding:14px;text-align:center;}
+.pay-item .name{font-weight:700;font-size:14px;margin-bottom:4px;}
+.pay-item .num{color:var(--primary-dark);font-weight:700;font-size:15px;letter-spacing:.5px;}
+.pay-item .type{font-size:11px;color:var(--gray);margin-top:3px;}
+.upload-box{position:relative;border:2px dashed var(--primary);border-radius:12px;padding:26px;text-align:center;background:linear-gradient(135deg,#fffbf0,#fff);cursor:pointer;transition:.25s;display:block;}
+.upload-box:hover{background:#fffbf0;border-color:#FFD966;}
+.upload-box input{display:none;}
+.upload-box .icon{font-size:36px;margin-bottom:8px;opacity:.75;}
+.upload-box p{font-size:14px;color:var(--gray);}
+.upload-box p b{color:var(--primary-dark);}
+.upload-box.captured{background:linear-gradient(135deg,#e6f9f0,#fff);border-color:var(--green);border-style:solid;}
+.preview{display:none;margin-top:12px;border-radius:12px;overflow:hidden;border:2px solid var(--green);max-width:320px;margin-left:auto;margin-right:auto;position:relative;}
+.preview img{width:100%;display:block;}
+.preview .remove-btn{position:absolute;top:8px;right:8px;background:rgba(246,70,93,.95);color:#fff;border:none;width:32px;height:32px;border-radius:50%;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+.proof-warn{padding:12px 14px;border-radius:10px;font-size:13.5px;margin-top:10px;}
+.proof-warn.warn{background:#fff3cd;color:#856404;border-left:4px solid #ffc107;}
+.proof-warn.danger{background:#fde8eb;color:#b02c3f;border-left:4px solid var(--red);}
+.proof-warn.ok{background:#e6f9f0;color:#0a8053;border-left:4px solid var(--green);}
+.proof-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px;padding:12px;background:#fafbfc;border:1px solid var(--border);border-radius:10px;font-size:12px;}
+.proof-meta div{text-align:center;}
+.proof-meta small{color:var(--gray);display:block;font-size:11px;}
+.proof-meta b{color:var(--dark);font-size:13px;}
+.alert{padding:14px 18px;border-radius:10px;font-size:14px;margin-bottom:18px;display:none;align-items:flex-start;gap:10px;}
+.alert.show{display:flex;}
+.alert-success{background:#e6f9f0;color:#0a8053;border-left:4px solid var(--green);}
+.alert-error{background:#fde8eb;color:#b02c3f;border-left:4px solid var(--red);}
+.alert-info{background:#e8f2fd;color:#1565c0;border-left:4px solid var(--blue);}
+.tracking{background:#fff;}
+.track-box{max-width:640px;margin:0 auto;background:var(--light);border-radius:14px;padding:30px;border:1px solid var(--border);}
+.order-result{margin-top:22px;display:none;}
+.order-card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:22px;}
+.order-card .row{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px dashed var(--border);font-size:14.5px;}
+.order-card .row:last-child{border-bottom:none;}
+.order-card .row span:first-child{color:var(--gray);}
+.order-card .row span:last-child{font-weight:600;}
+.status-pill{display:inline-block;padding:5px 14px;border-radius:20px;font-size:12.5px;font-weight:700;}
+.st-pending{background:#fff3cd;color:#856404;}
+.st-processing{background:#cfe2ff;color:#084298;}
+.st-completed{background:#d1e7dd;color:#0a3622;}
+.st-rejected{background:#f8d7da;color:#842029;}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.feature{background:#fff;border:1px solid var(--border);border-radius:14px;padding:28px 24px;transition:.3s;}
+.feature:hover{box-shadow:0 14px 34px rgba(0,0,0,.07);transform:translateY(-3px);}
+.feature .icon{width:52px;height:52px;border-radius:12px;background:rgba(240,185,11,.15);color:var(--primary-dark);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:16px;}
+.feature h3{font-size:17px;margin-bottom:8px;}
+.feature p{color:var(--gray);font-size:14.5px;}
+.faq{background:var(--light);}
+.faq-item{background:#fff;border:1px solid var(--border);border-radius:12px;margin-bottom:12px;overflow:hidden;}
+.faq-q{width:100%;text-align:left;padding:18px 22px;background:none;border:none;font-size:15.5px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;color:var(--dark);}
+.faq-q span{color:var(--primary);font-size:22px;transition:.3s;}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s;padding:0 22px;color:var(--gray);font-size:14.5px;}
+.faq-item.active .faq-a{max-height:240px;padding-bottom:18px;}
+.faq-item.active .faq-q span{transform:rotate(45deg);}
+footer{background:var(--dark);color:#848e9c;padding:56px 0 24px;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.3fr;gap:36px;margin-bottom:36px;}
+footer h4{color:#fff;font-size:15.5px;margin-bottom:16px;}
+footer p,footer a{font-size:14px;color:#848e9c;transition:.2s;}
+footer a:hover{color:var(--primary);}
+footer ul{list-style:none;}
+footer li{margin-bottom:9px;}
+.socials{display:flex;gap:10px;margin-top:14px;}
+.socials a{width:38px;height:38px;border-radius:9px;background:#1e2329;display:flex;align-items:center;justify-content:center;font-size:15px;}
+.socials a:hover{background:var(--primary);color:#0b0e11;}
+.footer-logo-svg{width:60px;height:60px;margin-bottom:12px;}
+.copyright{border-top:1px solid #1e2329;padding-top:22px;text-align:center;font-size:13.5px;}
+.wa-float{position:fixed;bottom:24px;right:24px;width:58px;height:58px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;font-size:28px;z-index:200;box-shadow:0 8px 22px rgba(37,211,102,.4);transition:.3s;}
+.wa-float:hover{transform:scale(1.1);}
+.login-screen{position:fixed;inset:0;background:radial-gradient(circle at 50% 30%,#1a1f24,#0b0e11);z-index:99999;display:flex;align-items:center;justify-content:center;padding:24px;}
+.login-card{width:100%;max-width:400px;background:#1e2329;border:1px solid #2b3139;border-radius:20px;padding:40px 30px;box-shadow:0 24px 60px rgba(0,0,0,.6);text-align:center;}
+.login-logo-svg{width:90px;height:90px;margin:0 auto 20px;display:block;filter:drop-shadow(0 0 20px rgba(240,185,11,.6));}
+.login-card h1{color:#fff;font-size:22px;margin-bottom:8px;font-weight:800;}
+.login-card .sub{color:#848e9c;font-size:13.5px;margin-bottom:28px;}
+.google-btn{width:100%;padding:14px;background:#fff;color:#1e2329;border:none;border-radius:11px;font-weight:700;font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;transition:.2s;}
+.google-btn:hover{background:#f1f3f4;transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.3);}
+.google-btn:disabled{opacity:.6;cursor:not-allowed;transform:none!important;}
+.login-error{display:none;background:rgba(246,70,93,.12);color:#ff8fa3;border-left:3px solid #f6465d;padding:11px 14px;border-radius:9px;font-size:13px;margin-top:18px;text-align:left;}
+.login-note{color:#5b6472;font-size:11.5px;margin-top:24px;line-height:1.7;}
+.blocked-screen{display:none;position:fixed;inset:0;background:#0b0e11;z-index:99999;align-items:center;justify-content:center;padding:24px;}
+.blocked-card{width:100%;max-width:400px;background:#1e2329;border:1.5px solid #f6465d;border-radius:20px;padding:40px 30px;text-align:center;box-shadow:0 0 60px rgba(246,70,93,.3);}
+.blocked-emoji{font-size:70px;margin-bottom:20px;}
+.blocked-card h2{color:#f6465d;font-size:22px;margin-bottom:12px;font-weight:800;}
+.blocked-card p{color:#848e9c;font-size:14px;line-height:1.7;margin-bottom:24px;}
+.blocked-btn{display:inline-block;margin-top:20px;background:#25D366;color:#fff;padding:12px 24px;border-radius:10px;font-weight:700;font-size:14px;text-decoration:none;}
+.blocked-logout{display:block;width:100%;margin-top:12px;padding:11px;background:transparent;color:#848e9c;border:1px solid #2b3139;border-radius:10px;font-weight:600;font-size:13.5px;cursor:pointer;}
+.gate-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:9999;padding:24px;backdrop-filter:blur(8px);align-items:center;justify-content:center;}
+.gate-modal.show{display:flex;}
+.gate-card{width:100%;max-width:380px;background:#1e2329;border:1px solid #2b3139;border-radius:18px;padding:36px 28px;box-shadow:0 24px 60px rgba(0,0,0,.5);}
+.gate-logo-svg{width:80px;height:80px;margin:0 auto 18px;display:block;}
+.gate-card h2{color:#fff;text-align:center;font-size:19px;margin-bottom:6px;}
+.gate-card p{color:#848e9c;text-align:center;font-size:13px;margin-bottom:24px;}
+.gate-err{display:none;background:rgba(246,70,93,.12);color:#ff8fa3;border-left:3px solid #f6465d;padding:10px 14px;border-radius:8px;font-size:13px;margin-bottom:16px;}
+.gate-err.show{display:block;}
+.gate-card label{display:block;font-size:13px;font-weight:700;color:#cbd5e1;margin-bottom:6px;}
+.gate-card input{width:100%;padding:13px 15px;background:#0b0e11;border:1.5px solid #2b3139;border-radius:10px;color:#fff;font-size:15px;margin-bottom:16px;}
+.gate-card input:focus{outline:none;border-color:var(--primary);}
+.gate-btn{width:100%;padding:13px;background:#f0b90b;color:#0b0e11;border:none;border-radius:10px;font-weight:800;font-size:15px;cursor:pointer;transition:.2s;}
+.gate-btn:hover{background:#d9a600;}
+.gate-btn:disabled{opacity:.5;cursor:not-allowed;}
+.gate-cancel{width:100%;padding:11px;background:transparent;color:#848e9c;border:1px solid #2b3139;border-radius:10px;font-weight:600;font-size:13.5px;cursor:pointer;margin-top:8px;}
+.gate-locked{display:none;background:rgba(246,70,93,.12);border:1.5px solid rgba(246,70,93,.4);border-left:4px solid #f6465d;padding:20px 18px;border-radius:12px;font-size:13.5px;margin-bottom:16px;text-align:center;font-weight:600;color:#ff8fa3;}
+.gate-locked.show{display:block;}
+.gate-attempt-info{text-align:center;margin-top:12px;font-size:11.5px;color:#5b6472;}
+.lock-timer-box{margin-top:14px;padding:12px;background:rgba(0,0,0,.3);border-radius:10px;}
+.lock-timer-label{font-size:11.5px;color:#848e9c;margin-bottom:4px;}
+.lock-timer-value{font-size:18px;font-weight:800;color:#fff;font-family:'Courier New',monospace;}
+.admin-panel{display:none;position:fixed;inset:0;background:var(--dark);z-index:9998;overflow-y:auto;}
+.admin-panel.show{display:block;}
+.ap-nav{background:var(--dark-2);border-bottom:1px solid var(--dark-3);padding:14px 0;position:sticky;top:0;z-index:100;}
+.ap-nav-inner{max-width:1400px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;}
+.ap-brand{display:flex;align-items:center;gap:10px;font-size:17px;font-weight:800;}
+.ap-brand svg{width:44px;height:44px;}
+.ap-brand-text{color:#fff;}
+.ap-brand-text span{color:var(--primary);}
+.ap-right{display:flex;gap:10px;align-items:center;flex-wrap:wrap;}
+.ap-live{display:inline-flex;align-items:center;gap:6px;background:rgba(14,203,129,.12);color:var(--green);padding:5px 12px;border-radius:20px;font-size:12px;font-weight:700;border:1px solid rgba(14,203,129,.3);}
+.ap-live .dot{width:7px;height:7px;border-radius:50%;background:var(--green);animation:pulse 1.5s infinite;}
+.ap-btn{background:rgba(240,185,11,.12);color:var(--primary);border:1px solid rgba(240,185,11,.3);padding:8px 16px;border-radius:9px;font-size:13px;font-weight:700;cursor:pointer;}
+.ap-btn:hover{background:var(--primary);color:var(--dark);}
+.ap-btn-red{background:rgba(246,70,93,.12);color:#ff8fa3;border:1px solid rgba(246,70,93,.3);padding:8px 16px;border-radius:9px;font-size:13px;font-weight:700;cursor:pointer;}
+.ap-btn-red:hover{background:var(--red);color:#fff;}
+.ap-btn-green{background:rgba(14,203,129,.12);color:var(--green);border:1px solid rgba(14,203,129,.3);padding:8px 16px;border-radius:9px;font-size:13px;font-weight:700;cursor:pointer;}
+.ap-btn-green:hover{background:var(--green);color:#fff;}
+.ap-main{max-width:1400px;margin:0 auto;padding:30px 20px;color:#eaecef;}
+.ap-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:30px;}
+.ap-stat{background:var(--dark-2);border:1px solid var(--dark-3);border-radius:14px;padding:22px;transition:.2s;}
+.ap-stat:hover{border-color:var(--primary);transform:translateY(-2px);}
+.ap-stat .lbl{font-size:12px;color:var(--gray);font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;}
+.ap-stat .val{font-size:26px;font-weight:900;color:#fff;}
+.ap-stat.gold .val{color:var(--primary);}
+.ap-stat.green .val{color:var(--green);}
+.ap-stat.blue .val{color:#60a5fa;}
+.ap-sec-title{font-size:16px;font-weight:800;color:#fff;margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.ap-sec-title .line{flex:1;height:1px;background:var(--dark-3);}
+.ap-platforms{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:30px;}
+.ap-plat{background:var(--dark-2);border:1px solid var(--dark-3);border-radius:14px;padding:18px;transition:.2s;cursor:pointer;}
+.ap-plat:hover{border-color:var(--primary);transform:translateY(-2px);}
+.ap-plat.active{border-color:var(--primary);background:rgba(240,185,11,.06);}
+.ap-plat .nm{font-size:14px;font-weight:700;color:#fff;display:flex;align-items:center;gap:8px;margin-bottom:10px;}
+.ap-plat .dt{width:10px;height:10px;border-radius:50%;}
+.ap-plat .num{font-size:22px;font-weight:900;color:var(--primary);}
+.ap-plat .sub{font-size:11.5px;color:var(--gray);margin-top:3px;}
+.ap-plat .usd{margin-top:12px;padding-top:12px;border-top:1px dashed var(--dark-3);display:flex;justify-content:space-between;font-size:12.5px;}
+.ap-plat .usd b{color:var(--green);}
+.ap-filters{background:var(--dark-2);border:1px solid var(--dark-3);border-radius:14px;padding:18px;margin-bottom:20px;}
+.ap-shortcuts{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;}
+.ap-shortcuts button{padding:6px 14px;border-radius:20px;background:transparent;border:1.5px solid var(--dark-3);color:#cbd5e1;font-size:12.5px;font-weight:700;cursor:pointer;transition:.2s;}
+.ap-shortcuts button:hover{border-color:var(--primary);color:var(--primary);}
+.ap-shortcuts button.active{background:var(--primary);color:var(--dark);border-color:var(--primary);}
+.ap-filter-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+.ap-filters label{display:block;font-size:11.5px;color:var(--gray);font-weight:700;text-transform:uppercase;margin-bottom:5px;}
+.ap-filters input,.ap-filters select{width:100%;padding:10px 12px;background:var(--dark);border:1.5px solid var(--dark-3);border-radius:9px;color:#fff;font-size:13.5px;}
+.ap-filters input:focus,.ap-filters select:focus{outline:none;border-color:var(--primary);}
+.ap-table-wrap{background:var(--dark-2);border:1px solid var(--dark-3);border-radius:14px;overflow:hidden;overflow-x:auto;}
+.ap-table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:900px;}
+.ap-table th{text-align:left;padding:14px 12px;background:var(--dark-3);font-size:11.5px;text-transform:uppercase;letter-spacing:.5px;color:var(--gray);font-weight:800;white-space:nowrap;}
+.ap-table td{padding:14px 12px;border-bottom:1px solid var(--dark-3);vertical-align:top;}
+.ap-table tr:hover td{background:rgba(240,185,11,.03);}
+.ap-table tr:last-child td{border-bottom:none;}
+.ap-oid{font-family:'Courier New',monospace;font-weight:800;color:var(--primary);font-size:12.5px;}
+.ap-trx{font-family:'Courier New',monospace;font-size:11.5px;color:#cbd5e1;}
+.ap-pill{display:inline-block;padding:4px 12px;border-radius:20px;font-size:11.5px;font-weight:800;white-space:nowrap;}
+.ap-pending{background:rgba(255,193,7,.15);color:#ffc107;border:1px solid rgba(255,193,7,.3);}
+.ap-processing{background:rgba(30,136,229,.15);color:#60a5fa;border:1px solid rgba(30,136,229,.3);}
+.ap-completed{background:rgba(14,203,129,.15);color:var(--green);border:1px solid rgba(14,203,129,.3);}
+.ap-rejected{background:rgba(246,70,93,.15);color:#ff8fa3;border:1px solid rgba(246,70,93,.3);}
+.ap-acts{display:flex;gap:5px;flex-wrap:wrap;}
+.ap-acts button{padding:5px 10px;font-size:11.5px;border-radius:7px;border:none;cursor:pointer;font-weight:800;transition:.2s;white-space:nowrap;}
+.ap-view{background:rgba(30,136,229,.15);color:#60a5fa;}
+.ap-view:hover{background:#1e88e5;color:#fff;}
+.ap-ok{background:rgba(14,203,129,.15);color:var(--green);}
+.ap-ok:hover{background:var(--green);color:#fff;}
+.ap-no{background:rgba(246,70,93,.15);color:#ff8fa3;}
+.ap-no:hover{background:var(--red);color:#fff;}
+.ap-empty{text-align:center;padding:60px 20px;color:var(--gray);font-size:14px;}
+.ap-loading{text-align:center;padding:40px;color:var(--gray);}
+.ap-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:9999;padding:30px 16px;overflow-y:auto;backdrop-filter:blur(5px);}
+.ap-modal.show{display:block;}
+.ap-modal-box{max-width:600px;margin:30px auto;background:var(--dark-2);border:1px solid var(--dark-3);border-radius:16px;padding:30px;position:relative;}
+.ap-modal-box h3{font-size:19px;margin-bottom:20px;color:#fff;padding-right:40px;}
+.ap-modal-close{position:absolute;top:16px;right:16px;width:36px;height:36px;border-radius:10px;background:rgba(246,70,93,.15);color:#ff8fa3;border:none;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+.ap-modal-close:hover{background:var(--red);color:#fff;}
+.ap-drow{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px dashed var(--dark-3);font-size:13.5px;gap:10px;}
+.ap-drow:last-child{border-bottom:none;}
+.ap-drow span:first-child{color:var(--gray);flex-shrink:0;}
+.ap-drow span:last-child{color:#fff;font-weight:600;text-align:right;word-break:break-word;}
+.ap-proof{width:100%;border-radius:12px;border:1px solid var(--dark-3);margin-top:12px;cursor:zoom-in;}
+.ap-warn{padding:12px 14px;border-radius:10px;font-size:13px;margin-top:12px;line-height:1.6;}
+.ap-warn.warn{background:rgba(255,193,7,.1);color:#ffc107;border-left:3px solid #ffc107;}
+.ap-warn.danger{background:rgba(246,70,93,.1);color:#ff8fa3;border-left:3px solid var(--red);}
+.ap-user-box{background:rgba(30,136,229,.08);border:1px solid rgba(30,136,229,.3);border-radius:12px;padding:14px;margin-top:14px;}
+.ap-user-box .ap-drow span:first-child{color:#60a5fa;}
+.ap-actions-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px;}
+.ap-block-btn{background:linear-gradient(135deg,#f6465d,#b02c3f);color:#fff;padding:11px 20px;border:none;border-radius:10px;font-weight:800;font-size:13.5px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;}
+.ap-block-btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(246,70,93,.4);}
+.ap-mail-btn{background:rgba(30,136,229,.15);color:#60a5fa;padding:11px 18px;border:1px solid rgba(30,136,229,.3);border-radius:10px;font-weight:700;font-size:13px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;text-decoration:none;}
+.ap-mail-btn:hover{background:#1e88e5;color:#fff;}
+.ap-toast{position:fixed;bottom:24px;right:24px;background:var(--dark-2);border:1px solid var(--dark-3);border-radius:12px;padding:14px 20px;color:#fff;font-weight:600;font-size:14px;box-shadow:0 12px 30px rgba(0,0,0,.4);z-index:99999;transform:translateY(100px);opacity:0;transition:.3s;pointer-events:none;}
+.ap-toast.show{transform:translateY(0);opacity:1;}
+.ap-toast.success{border-left:4px solid var(--green);}
+.ap-toast.error{border-left:4px solid var(--red);}
+.ap-toast.info{border-left:4px solid var(--blue);}
+@media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr;}.platforms-grid{grid-template-columns:1fr 1fr;}.grid-3{grid-template-columns:1fr 1fr;}.hero h1{font-size:28px;}.section-head h2{font-size:24px;}.ap-stats,.ap-platforms{grid-template-columns:1fr 1fr;}.ap-filter-row{grid-template-columns:1fr 1fr;}}
+@media(max-width:620px){
+.promo-content{font-size:12.5px;gap:6px;padding:0 8px;}.promo-emoji{font-size:16px;}.promo-amount,.promo-bot{padding:2px 8px;font-size:12px;}
+.top-bar-inner{justify-content:center;font-size:12.5px;}.top-item small{display:none;}
+.nav-links{position:absolute;top:100%;left:0;right:0;background:var(--dark-2);flex-direction:column;padding:18px 24px;gap:14px;display:none;border-bottom:1px solid #2b3139;}
+.nav-links.open{display:flex;}.menu-toggle{display:block;}.nav .btn-primary{display:none;}
+.platforms-grid,.grid-3,.form-row,.pay-methods{grid-template-columns:1fr;}.amount-box{grid-template-columns:1fr;}
+.hero{padding:40px 0 50px;}.hero h1{font-size:23px;}.hero-logo-svg{width:110px;height:110px;}
+section{padding:50px 0;}.order-wrap{padding:22px 16px;}
+.ap-stats,.ap-platforms,.ap-filter-row{grid-template-columns:1fr;}.ap-main{padding:20px 14px;}
+.footer-grid{grid-template-columns:1fr;}.logo-svg{width:38px;height:38px;}.user-chip span{display:none;}
+}
+</style>
+</head>
+<body>
 
+<!-- লগইন স্ক্রিন -->
+<div class="login-screen" id="loginScreen">
+  <div class="login-card">
+    <svg class="login-logo-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <defs><linearGradient id="lgLogin" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FFE58F"/><stop offset="40%" stop-color="#F0B90B"/><stop offset="100%" stop-color="#8B6914"/></linearGradient></defs>
+      <circle cx="100" cy="100" r="92" fill="#0b0e11" stroke="url(#lgLogin)" stroke-width="5"/>
+      <circle cx="100" cy="100" r="82" fill="none" stroke="url(#lgLogin)" stroke-width="1" opacity="0.5"/>
+      <text x="100" y="140" font-family="Arial Black, Arial" font-size="120" font-weight="900" text-anchor="middle" fill="url(#lgLogin)">$</text>
+    </svg>
+    <h1>DollarHub BD</h1>
+    <p class="sub">অর্ডার করতে Gmail দিয়ে সাইন ইন করুন</p>
+    <button class="google-btn" id="googleLoginBtn">
+      <svg width="20" height="20" viewBox="0 0 48 48">
+        <path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.4 29.3 35 24 35c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34 4.7 29.3 3 24 3 12.4 3 3 12.4 3 24s9.4 21 21 21 21-9.4 21-21c0-1.2-.1-2.3-.4-3.5z"/>
+        <path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34 4.7 29.3 3 24 3 16.3 3 9.7 7.4 6.3 14.7z"/>
+        <path fill="#4CAF50" d="M24 45c5.2 0 9.9-1.7 13.5-4.5l-6.2-5.2c-2 1.4-4.6 2.3-7.3 2.3-5.3 0-9.7-2.6-11.3-7.5l-6.6 5.1C9.6 40.6 16.2 45 24 45z"/>
+        <path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.3 4.1-4.2 5.4l6.2 5.2C40.9 35.4 45 30.3 45 24c0-1.2-.1-2.3-.4-3.5z"/>
+      </svg>
+      Google দিয়ে সাইন ইন করুন
+    </button>
+    <div class="login-error" id="loginError"></div>
+    <p class="login-note">🔒 নিরাপদ ও সুরক্ষিত<br/>আপনার তথ্য গোপন রাখা হবে</p>
+  </div>
+</div>
+
+<!-- ব্লকড স্ক্রিন -->
+<div class="blocked-screen" id="blockedScreen">
+  <div class="blocked-card">
+    <div class="blocked-emoji">🚫</div>
+    <h2>অ্যাকাউন্ট ব্লক করা হয়েছে</h2>
+    <p>আপনার অ্যাকাউন্ট সন্দেহজনক কার্যকলাপের কারণে ব্লক করা হয়েছে। আর কোনো অর্ডার করতে পারবেন না।</p>
+    <a href="https://wa.me/8801302627579" target="_blank" rel="noopener" class="blocked-btn">💬 WhatsApp করুন</a>
+    <button class="blocked-logout" id="blockedLogout">অন্য অ্যাকাউন্টে সাইন ইন</button>
+  </div>
+</div>
+
+<!-- প্রোমো ব্যানার -->
+<div class="promo-banner">
+  <div class="container promo-content">
+    <span class="promo-emoji">🎁</span>
+    <span>আমাদের কাছ থেকে <span class="promo-amount">$১০০ ডলার</span> রিচার্জ করলে</span>
+    <span><span class="promo-bot">🤖 ট্রেডিং বট</span> <span class="promo-highlight">সম্পূর্ণ ফ্রি!</span></span>
+    <span class="promo-emoji">🔥</span>
+  </div>
+</div>
+
+<!-- টপ বার -->
+<div class="top-bar">
+  <div class="container top-bar-inner">
+    <div class="top-item nagad"><span class="ico">৳</span><span><small>নগদ:</small> <b>০১৭৪২৩১০৭২৬</b></span></div>
+    <div class="top-item wa"><span class="ico">💬</span><span><small>WhatsApp:</small><b>০১৩০২৬২৭৫৭৯</b><a href="https://wa.me/8801302627579" target="_blank" rel="noopener">মেসেজ দিন</a></span></div>
+  </div>
+</div>
+
+<!-- হেডার -->
+<header>
+  <div class="container nav">
+    <div class="logo-wrap">
+      <svg class="logo-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <defs><linearGradient id="goldNav" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FFE58F"/><stop offset="40%" stop-color="#F0B90B"/><stop offset="100%" stop-color="#8B6914"/></linearGradient></defs>
+        <circle cx="100" cy="100" r="92" fill="#0b0e11" stroke="url(#goldNav)" stroke-width="5"/>
+        <text x="100" y="140" font-family="Arial Black, Arial" font-size="120" font-weight="900" text-anchor="middle" fill="url(#goldNav)">$</text>
+      </svg>
+      <span class="logo-text">Dollar<span>Hub</span> BD</span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">হোম</a></li>
+      <li><a href="#platforms">প্ল্যাটফর্ম</a></li>
+      <li><a href="#order">অর্ডার</a></li>
+      <li><a href="#track">ট্র্যাক</a></li>
+      <li><a href="#faq">প্রশ্ন</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="user-chip" id="userChip" style="display:none;"><img id="userPhoto" src="" alt="" /><span id="userName">User</span></div>
+      <a href="#order" class="btn btn-primary">এখনই অর্ডার</a>
+      <button id="adminLinkTop" class="admin-btn-top" title="Admin">🔐</button>
+      <button class="menu-toggle" id="menuToggle">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- হিরো -->
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-content">
+      <svg class="hero-logo-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="heroBg" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#1e2329"/><stop offset="100%" stop-color="#0b0e11"/></radialGradient>
+          <linearGradient id="goldHero" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FFE58F"/><stop offset="35%" stop-color="#FFD966"/><stop offset="65%" stop-color="#F0B90B"/><stop offset="100%" stop-color="#8B6914"/></linearGradient>
+          <linearGradient id="greenHero" x1="0%" y1="100%" x2="0%" y2="0%"><stop offset="0%" stop-color="#0a5c3a"/><stop offset="100%" stop-color="#4ade80"/></linearGradient>
+        </defs>
+        <circle cx="100" cy="100" r="96" fill="url(#heroBg)"/>
+        <circle cx="100" cy="100" r="92" fill="none" stroke="url(#goldHero)" stroke-width="4"/>
+        <circle cx="100" cy="100" r="82" fill="none" stroke="url(#goldHero)" stroke-width="1" opacity="0.4"/>
+        <path d="M 60 45 L 70 30 L 80 42 L 90 25 L 100 42 L 110 25 L 120 42 L 130 30 L 140 45 L 138 55 L 62 55 Z" fill="url(#goldHero)" stroke="#8B6914" stroke-width="1"/>
+        <circle cx="70" cy="28" r="3" fill="#FFE58F"/><circle cx="90" cy="23" r="3" fill="#FFE58F"/><circle cx="110" cy="23" r="3" fill="#FFE58F"/><circle cx="130" cy="28" r="3" fill="#FFE58F"/>
+        <text x="100" y="145" font-family="Arial Black, Arial" font-size="100" font-weight="900" text-anchor="middle" fill="url(#goldHero)" stroke="#8B6914" stroke-width="1">D</text>
+        <rect x="88" y="120" width="5" height="15" fill="url(#greenHero)"/>
+        <rect x="96" y="112" width="5" height="23" fill="url(#greenHero)"/>
+        <rect x="104" y="104" width="5" height="31" fill="url(#greenHero)"/>
+        <path d="M 85 135 L 115 105 L 125 105 L 125 115 L 115 115 L 90 140 Z" fill="url(#greenHero)" opacity="0.9"/>
+        <circle cx="100" cy="175" r="4" fill="url(#goldHero)"/>
+      </svg>
+      <div class="live-badge"><span class="dot"></span> সার্ভিস চালু আছে</div>
+      <h1>Binance, Quotex, Forex — <span>দ্রুত ডলার রিচার্জ</span></h1>
+      <p>নগদে টাকা পাঠান, কয়েক মিনিটেই আপনার ট্রেডিং অ্যাকাউন্টে ডলার পৌঁছে যাবে। ২৪/৭ সাপোর্ট।</p>
+      <div class="hero-num-box">
+        <div class="hero-num-nagad"><div class="label">নগদ (Personal)</div><div class="num">০১৭৪২৩১০৭২৬</div></div>
+        <div class="hero-num-wa"><div class="label">WhatsApp</div><div class="num">০১৩০২৬২৭৫৭৯</div></div>
+      </div>
+      <div class="hero-btns">
+        <a href="#order" class="btn btn-primary">অর্ডার করুন</a>
+        <a href="https://wa.me/8801302627579" target="_blank" rel="noopener" class="btn btn-outline">WhatsApp-এ কথা বলুন</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- প্ল্যাটফর্ম -->
+<section id="platforms">
+  <div class="container">
+    <div class="section-head">
+      <span class="tag">সমর্থিত প্ল্যাটফর্ম</span>
+      <h2>যেসব প্ল্যাটফর্মে ডলার দিই</h2>
+      <p>নিচের যেকোনো প্ল্যাটফর্মে রিচার্জ করতে পারবেন</p>
+    </div>
+    <div class="platforms-grid" id="platformsGrid"></div>
+  </div>
+</section>
+
+<!-- অর্ডার -->
+<section class="order-section" id="order">
+  <div class="container">
+    <div class="section-head"><span class="tag">অর্ডার ফর্ম</span><h2>ডলার রিচার্জ অর্ডার</h2><p>নিচের ফর্মটি পূরণ করে অর্ডার কনফার্ম করুন</p></div>
+    <div class="order-wrap">
+      <div class="steps">
+        <div class="step active" id="step1"><div class="num">১</div><span>তথ্য দিন</span></div>
+        <div class="step" id="step2"><div class="num">২</div><span>টাকা পাঠান</span></div>
+        <div class="step" id="step3"><div class="num">৩</div><span>প্রমাণ দিন</span></div>
+        <div class="step" id="step4"><div class="num">৪</div><span>সম্পন্ন</span></div>
+      </div>
+      <div class="alert alert-info show"><span>⚠️ টাকা পাঠানোর <b>আগে</b> নিচের ফর্মটি পূরণ করুন।</span></div>
+      <form id="orderForm" novalidate autocomplete="off">
+        <input type="text" id="hp_field" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" />
+        <div class="form-row">
+          <div class="form-group"><label>আপনার নাম <span class="req">*</span></label><input type="text" id="fName" required maxlength="60" placeholder="পূর্ণ নাম" /></div>
+          <div class="form-group"><label>মোবাইল নম্বর <span class="req">*</span></label><input type="tel" id="fPhone" required pattern="01[3-9][0-9]{8}" maxlength="11" placeholder="01XXXXXXXXX" /><p class="hint">১১ ডিজিট, 01 দিয়ে শুরু</p></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>প্ল্যাটফর্ম <span class="req">*</span></label><select id="fPlatform" required><option value="">-- বেছে নিন --</option></select></div>
+          <div class="form-group"><label>প্ল্যাটফর্ম আইডি / ইমেইল <span class="req">*</span></label><input type="text" id="fAccountId" required maxlength="80" placeholder="যে আইডিতে ডলার যাবে" /></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>ডলার পরিমাণ (USD) <span class="req">*</span></label><input type="number" id="fUsd" required min="5" max="5000" step="0.01" placeholder="যেমন: 10" /><p class="hint">সর্বনিম্ন $৫, সর্বোচ্চ $৫০০০</p></div>
+          <div class="form-group"><label>পেমেন্ট মাধ্যম <span class="req">*</span></label><select id="fPayMethod" required><option value="">-- বেছে নিন --</option><option value="Nagad">নগদ (Personal — Send Money)</option></select></div>
+        </div>
+        <div class="amount-box" id="amountBox" style="display:none;">
+          <div><small>ডলার</small><b id="outUsd">$0</b></div>
+          <div><small>রেট</small><b id="outRate">৳0</b></div>
+          <div><small>মোট দিতে হবে</small><b class="total" id="outTotal">৳0</b></div>
+        </div>
+        <div class="pay-box">
+          <h4>💳 টাকা পাঠানোর নম্বর</h4>
+          <div class="pay-methods">
+            <div class="pay-item"><div class="name">নগদ</div><div class="num">০১৭৪২৩১০৭২৬</div><div class="type">Personal (Send Money)</div></div>
+            <div class="pay-item"><div class="name">টাইপ</div><div class="num">Send Money</div><div class="type">Cash Out নয়</div></div>
+          </div>
+          <button type="button" id="copyNagadBtn" style="margin-top:12px;width:100%;padding:12px;background:#0ecb81;color:#fff;border:none;border-radius:9px;font-size:14.5px;font-weight:700;cursor:pointer;">📋 নগদ নাম্বার কপি করুন</button>
+          <p class="hint" style="margin-top:12px;">⚠️ শুধুমাত্র উপরের নম্বরে <b>Send Money</b> করুন। Cash Out করবেন না।</p>
+        </div>
+        <div id="proofSection">
+          <div class="alert alert-info show"><span>📌 <b>গুরুত্বপূর্ণ:</b> টাকা পাঠানোর পর অবশ্যই <b>পেমেন্ট স্ক্রিনশট</b> আপলোড করুন।</span></div>
+          <div class="form-group">
+            <label>📸 পেমেন্টের ছবি / স্ক্রিনশট <span class="req">*</span></label>
+            <label for="proofInput" class="upload-box" id="uploadBox">
+              <input type="file" id="proofInput" accept="image/png,image/jpeg,image/jpg,image/webp" capture="environment" />
+              <div class="icon">📷</div>
+              <p><b>ছবি তুলুন</b> অথবা গ্যালারি থেকে নির্বাচন করুন<br/><small>JPG / PNG / WebP • সর্বোচ্চ 2 MB</small></p>
+              <div style="margin-top:14px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;">
+                <span style="background:#0ecb81;color:#fff;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:700;">📷 ক্যামেরা</span>
+                <span style="background:#f0b90b;color:#0b0e11;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:700;">🖼️ গ্যালারি</span>
+              </div>
+            </label>
+            <div class="preview" id="preview"></div>
+            <div id="proofStatus" style="display:none;margin-top:10px;font-size:13.5px;font-weight:600;"></div>
+            <div id="proofMeta" class="proof-meta" style="display:none;"></div>
+          </div>
+          <div class="form-group"><label>🔢 ট্রানজেকশন আইডি (TrxID) <span class="req">*</span></label><input type="text" id="fTrx" maxlength="30" placeholder="যেমন: 8N7A2K9XYZ" /><p class="hint">নগদ পেমেন্ট SMS-এ থাকা TrxID লিখুন (৬–২০ অক্ষর)</p></div>
+          <div style="background:#fafbfc;border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:16px;">
+            <p style="font-size:13.5px;font-weight:700;margin-bottom:10px;color:#404854;">✅ অর্ডার কনফার্ম করার আগে দেখে নিন:</p>
+            <ul style="list-style:none;font-size:13.5px;color:#5b6472;">
+              <li style="padding:5px 0;">☑️ সঠিক <b>নগদ নম্বরে</b> Send Money করেছেন</li>
+              <li style="padding:5px 0;">☑️ পেমেন্টের <b>স্ক্রিনশট</b> বা SMS-এর ছবি তুলেছেন</li>
+              <li style="padding:5px 0;">☑️ <b>TrxID</b> কপি করে এখানে লিখেছেন</li>
+              <li style="padding:5px 0;">☑️ প্ল্যাটফর্ম আইডি <b>ঠিকভাবে</b> দিয়েছেন</li>
+            </ul>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary" id="submitBtn" style="width:100%;padding:14px;font-size:16px;">অর্ডার কনফার্ম করুন</button>
+      </form>
+      <div class="alert alert-success" id="successBox" style="margin-top:20px;">
+        <div><b>✓ অর্ডার সফলভাবে জমা হয়েছে!</b><br/>আপনার অর্ডার আইডি: <b id="successOid"></b><br/><small>এই আইডি সংরক্ষণ করুন।</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ট্র্যাকিং -->
+<section class="tracking" id="track">
+  <div class="container">
+    <div class="section-head"><span class="tag">অর্ডার ট্র্যাকিং</span><h2>আপনার অর্ডার স্ট্যাটাস দেখুন</h2><p>অর্ডার আইডি ও মোবাইল নম্বর দিয়ে স্ট্যাটাস চেক করুন</p></div>
+    <div class="track-box">
+      <div class="form-row">
+        <div class="form-group"><label>অর্ডার আইডি</label><input type="text" id="trackOid" placeholder="ORD-XXXXXX" maxlength="20" /></div>
+        <div class="form-group"><label>মোবাইল নম্বর</label><input type="tel" id="trackPhone" placeholder="01XXXXXXXXX" maxlength="11" /></div>
+      </div>
+      <button class="btn btn-primary" id="trackBtn" style="width:100%;">স্ট্যাটাস দেখুন</button>
+      <div class="order-result" id="orderResult"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ফিচার -->
+<section>
+  <div class="container">
+    <div class="section-head"><span class="tag">কেন আমরা</span><h2>আমাদের বিশেষত্ব</h2></div>
+    <div class="grid-3">
+      <div class="feature"><div class="icon">⚡</div><h3>সুপার ফাস্ট</h3><p>অ্যাপ্রুভালের পর ৫–৩০ মিনিটেই ডলার পৌঁছে যাবে।</p></div>
+      <div class="feature"><div class="icon">🔒</div><h3>১০০% নিরাপদ</h3><p>Firebase ও Google দিয়ে সুরক্ষিত। তথ্য গোপন রাখা হয়।</p></div>
+      <div class="feature"><div class="icon">💰</div><h3>সেরা রেট</h3><p>মার্কেটের সবচেয়ে কম কমিশনে ডলার রিচার্জ।</p></div>
+      <div class="feature"><div class="icon">🕐</div><h3>২৪/৭ সাপোর্ট</h3><p>WhatsApp-এ মেসেজ দিন, সাথে সাথে সাপোর্ট পাবেন।</p></div>
+      <div class="feature"><div class="icon">📸</div><h3>প্রমাণসহ প্রসেস</h3><p>প্রতিটি অর্ডারের স্ক্রিনশট ও TrxID সংরক্ষিত থাকে।</p></div>
+      <div class="feature"><div class="icon">🤖</div><h3>ফ্রি ট্রেডিং বট</h3><p>$১০০ ডলার রিচার্জ করলে ট্রেডিং বট সম্পূর্ণ ফ্রি!</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="section-head"><span class="tag">প্রশ্নোত্তর</span><h2>সাধারণ প্রশ্ন</h2></div>
+    <div style="max-width:760px;margin:0 auto;">
+      <div class="faq-item"><button class="faq-q">কতক্ষণে ডলার পাব? <span>+</span></button><div class="faq-a"><p>পেমেন্ট ভেরিফাই হওয়ার পর সাধারণত ৫–৩০ মিনিটের মধ্যে ডলার পাঠানো হয়।</p></div></div>
+      <div class="faq-item"><button class="faq-q">সর্বনিম্ন কত ডলার? <span>+</span></button><div class="faq-a"><p>সর্বনিম্ন $৫ থেকে অর্ডার করা যায়।</p></div></div>
+      <div class="faq-item"><button class="faq-q">টাকা পাঠানোর পর কী করব? <span>+</span></button><div class="faq-a"><p>ফর্মে পেমেন্টের স্ক্রিনশট আপলোড করুন এবং TrxID লিখুন।</p></div></div>
+      <div class="faq-item"><button class="faq-q">ফ্রি ট্রেডিং বট কীভাবে পাব? <span>+</span></button><div class="faq-a"><p>$১০০ বা তার বেশি ডলার রিচার্জ করলে ট্রেডিং বট সম্পূর্ণ ফ্রি পাবেন।</p></div></div>
+      <div class="faq-item"><button class="faq-q">যদি ডলার না পাই? <span>+</span></button><div class="faq-a"><p>WhatsApp-এ অর্ডার আইডি দিয়ে মেসেজ দিন। প্রয়োজনে সম্পূর্ণ রিফান্ড করা হবে।</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ফুটার -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <svg class="footer-logo-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <defs><linearGradient id="goldFt" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FFE58F"/><stop offset="40%" stop-color="#F0B90B"/><stop offset="100%" stop-color="#8B6914"/></linearGradient></defs>
+          <circle cx="100" cy="100" r="92" fill="#0b0e11" stroke="url(#goldFt)" stroke-width="5"/>
+          <text x="100" y="140" font-family="Arial Black, Arial" font-size="120" font-weight="900" text-anchor="middle" fill="url(#goldFt)">$</text>
+        </svg>
+        <div style="font-size:18px;font-weight:800;color:#f0b90b;">Dollar<span style="color:#fff;">Hub</span> BD</div>
+        <p style="margin-top:10px;">দ্রুত, নিরাপদ ও সাশ্রয়ী ডলার রিচার্জ সার্ভিস। ২৪/৭ সাপোর্ট।</p>
+        <div class="socials"><a href="https://wa.me/8801302627579" target="_blank" rel="noopener">💬</a></div>
+      </div>
+      <div><h4>দ্রুত লিংক</h4><ul><li><a href="#home">হোম</a></li><li><a href="#platforms">প্ল্যাটফর্ম</a></li><li><a href="#order">অর্ডার</a></li><li><a href="#track">ট্র্যাক</a></li></ul></div>
+      <div><h4>প্ল্যাটফর্ম</h4><ul><li><a href="#order">Binance</a></li><li><a href="#order">Quotex</a></li><li><a href="#order">Forex</a></li><li><a href="#order">Hot Forex</a></li></ul></div>
+      <div><h4>যোগাযোগ</h4><p>WhatsApp: ০১৩০২৬২৭৫৭৯</p><p style="margin-top:6px;">নগদ: ০১৭৪২৩১০৭২৬ (Personal)</p></div>
+    </div>
+    <div class="copyright">© ২০২৫ DollarHub BD। সর্বস্বত্ব সংরক্ষিত।</div>
+  </div>
+</footer>
+
+<a href="https://wa.me/8801302627579" class="wa-float" target="_blank" rel="noopener">💬</a>
+
+<!-- অ্যাডমিন গেট -->
+<div class="gate-modal" id="gateModal">
+  <div class="gate-card">
+    <svg class="gate-logo-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <defs><linearGradient id="goldGate" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FFE58F"/><stop offset="40%" stop-color="#F0B90B"/><stop offset="100%" stop-color="#8B6914"/></linearGradient></defs>
+      <circle cx="100" cy="100" r="92" fill="#0b0e11" stroke="url(#goldGate)" stroke-width="5"/>
+      <text x="100" y="140" font-family="Arial Black, Arial" font-size="120" font-weight="900" text-anchor="middle" fill="url(#goldGate)">$</text>
+    </svg>
+    <h2>🔐 অ্যাডমিন প্যানেল</h2>
+    <p>শুধুমাত্র অ্যাডমিনের জন্য</p>
+    <div class="gate-locked" id="gateLocked">
+      <div style="font-size:40px;margin-bottom:8px;">🚫</div>
+      <b style="font-size:16px;display:block;margin-bottom:8px;color:#ff8fa3;">অ্যাকাউন্ট লক করা হয়েছে!</b>
+      <div style="font-size:13px;line-height:1.7;color:#ff8fa3;">আপনি ৩ বার ভুল পাসওয়ার্ড দিয়েছেন।<br/>নিরাপত্তার জন্য <b>৩ ঘণ্টা</b> অপেক্ষা করতে হবে।</div>
+      <div class="lock-timer-box"><div class="lock-timer-label">বাকি সময়:</div><div class="lock-timer-value" id="lockTimer">৩:০০:০০</div></div>
+      <div style="margin-top:12px;font-size:11.5px;color:#5b6472;">⏰ ৩ ঘণ্টা পর আবার চেষ্টা করতে পারবেন।</div>
+    </div>
+    <div class="gate-err" id="gateErr"></div>
+    <div id="gateForm">
+      <label>🔑 পাসওয়ার্ড</label>
+      <input type="password" id="gateInput" placeholder="পাসওয়ার্ড লিখুন" autocomplete="off" />
+      <button class="gate-btn" id="gateBtn">প্রবেশ করুন</button>
+      <button class="gate-cancel" id="gateCancel">বাতিল করুন</button>
+      <div class="gate-attempt-info">🔒 নিরাপত্তা: <span id="attemptInfo">৩টি চেষ্টা</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- অ্যাডমিন প্যানেল -->
+<div class="admin-panel" id="adminPanel">
+  <div class="ap-nav">
+    <div class="ap-nav-inner">
+      <div class="ap-brand">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <defs><linearGradient id="goldAp" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FFE58F"/><stop offset="40%" stop-color="#F0B90B"/><stop offset="100%" stop-color="#8B6914"/></linearGradient></defs>
+          <circle cx="100" cy="100" r="92" fill="#0b0e11" stroke="url(#goldAp)" stroke-width="5"/>
+          <text x="100" y="140" font-family="Arial Black, Arial" font-size="120" font-weight="900" text-anchor="middle" fill="url(#goldAp)">$</text>
+        </svg>
+        <div class="ap-brand-text">Dollar<span>Hub</span> Admin</div>
+      </div>
+      <div class="ap-right">
+        <span class="ap-live"><span class="dot"></span> লাইভ</span>
+        <button class="ap-btn" id="apRefresh">🔄 রিফ্রেশ</button>
+        <button class="ap-btn-green" id="apCsv">📥 CSV</button>
+        <button class="ap-btn-red" id="apLogout">লগআউট</button>
+      </div>
+    </div>
+  </div>
+  <div class="ap-main">
+    <div class="ap-stats">
+      <div class="ap-stat"><div class="lbl">মোট অর্ডার</div><div class="val" id="apTotal">0</div></div>
+      <div class="ap-stat gold"><div class="lbl">Pending</div><div class="val" id="apPending">0</div></div>
+      <div class="ap-stat green"><div class="lbl">Completed</div><div class="val" id="apCompleted">0</div></div>
+      <div class="ap-stat blue"><div class="lbl">মোট ডলার</div><div class="val" id="apUsd">$0</div></div>
+    </div>
+    <div class="ap-sec-title"><span>📊 কোন প্ল্যাটফর্মে কত অর্ডার</span><span class="line"></span></div>
+    <div class="ap-platforms" id="apPlatforms"></div>
+    <div class="ap-sec-title"><span>🔍 ফিল্টার</span><span class="line"></span></div>
+    <div class="ap-filters">
+      <div class="ap-shortcuts">
+        <button data-range="today" class="active">আজ</button>
+        <button data-range="yesterday">গতকাল</button>
+        <button data-range="week">এই সপ্তাহ</button>
+        <button data-range="month">এই মাস</button>
+        <button data-range="all">সব</button>
+      </div>
+      <div class="ap-filter-row">
+        <div><label>স্ট্যাটাস</label><select id="apStatus"><option value="">সব</option><option value="pending">Pending</option><option value="processing">Processing</option><option value="completed">Completed</option><option value="rejected">Rejected</option></select></div>
+        <div><label>সাজান</label><select id="apSort"><option value="newest">নতুন আগে</option><option value="oldest">পুরনো আগে</option><option value="amount">বেশি ডলার আগে</option></select></div>
+        <div><label>সার্চ</label><input type="text" id="apSearch" placeholder="নাম / ফোন / ইমেইল" maxlength="40" /></div>
+        <div><label>&nbsp;</label><button class="ap-btn" style="width:100%;padding:10px;" id="apClear">ফিল্টার মুছুন</button></div>
+      </div>
+    </div>
+    <div class="ap-sec-title"><span>📋 সব অর্ডার (<span id="apCount">0</span>)</span><span class="line"></span></div>
+    <div class="ap-table-wrap">
+      <table class="ap-table">
+        <thead><tr><th>সময়</th><th>কাস্টমার</th><th>প্ল্যাটফর্ম</th><th>ডলার</th><th>টাকা</th><th>TrxID</th><th>স্ট্যাটাস</th><th>একশন</th></tr></thead>
+        <tbody id="apOrdersBody"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="ap-modal" id="apModal">
+  <div class="ap-modal-box">
+    <button class="ap-modal-close" id="apModalClose">✕</button>
+    <h3>📋 অর্ডার বিস্তারিত</h3>
+    <div id="apModalContent"></div>
+  </div>
+</div>
+
+<div class="ap-toast" id="apToast"></div>
+
+<script type="module">
+/* সিকিউরিটি */
+(function(){
+  const styleWarn = 'color:#f6465d;font-size:24px;font-weight:900;';
+  console.log('%c⚠️ থামুন!', styleWarn);
+  console.log('%cএই সাইটটি সুরক্ষিত। Hack করার চেষ্টা করলে আপনার IP এবং ডিভাইস fingerprint রেকর্ড হবে।','color:#f0b90b;font-size:14px;font-weight:600;');
+  document.addEventListener('contextmenu', e => {
+    if(e.target.closest('.admin-panel') || e.target.closest('.gate-modal')){e.preventDefault();return false;}
+  });
+  document.addEventListener('keydown', e => {
+    if(e.key === 'F12'){e.preventDefault();return false;}
+    if(e.ctrlKey && e.shiftKey && ['I','J','C','K'].includes(e.key.toUpperCase())){e.preventDefault();return false;}
+    if(e.ctrlKey && e.key.toUpperCase() === 'U'){e.preventDefault();return false;}
+    if(e.ctrlKey && e.key.toUpperCase() === 'S'){e.preventDefault();return false;}
+  });
+  if(window.top !== window.self){window.top.location = window.self.location;}
+})();
+
+/* অ্যাডমিন পাসওয়ার্ড: tanvir@VAI/hub!95 */
+const _adminPass = atob("dGFudmlyQFZBSS9odWIhOTU=");
+
+/* Brute Force Protection */
+const SECURITY = {
+  MAX_ATTEMPTS: 3,
+  LOCK_DURATION: 3 * 60 * 60 * 1000,
+  ATTEMPT_KEY: 'dh_attempts_v2',
+  LOCK_KEY: 'dh_lock_v2',
+  getFingerprint(){
+    try{
+      const fp = [navigator.userAgent, navigator.language, screen.width+'x'+screen.height, screen.colorDepth, new Date().getTimezoneOffset(), navigator.hardwareConcurrency||0, navigator.platform].join('|');
+      let hash = 0;
+      for(let i=0;i<fp.length;i++){hash = ((hash<<5)-hash)+fp.charCodeAt(i);hash|=0;}
+      return Math.abs(hash).toString(36);
+    }catch(e){return 'unknown';}
+  },
+  isLocked(){
+    try{
+      const lock = JSON.parse(localStorage.getItem(this.LOCK_KEY)||'null');
+      if(!lock)return false;
+      if(Date.now() > lock.until){localStorage.removeItem(this.LOCK_KEY);localStorage.removeItem(this.ATTEMPT_KEY);return false;}
+      return lock;
+    }catch(e){return false;}
+  },
+  getAttempts(){
+    try{
+      const data = JSON.parse(localStorage.getItem(this.ATTEMPT_KEY)||'[]');
+      const fp = this.getFingerprint();
+      return data.filter(a => a.fp === fp && Date.now() - a.t < this.LOCK_DURATION);
+    }catch(e){return [];}
+  },
+  recordFail(){
+    try{
+      const data = JSON.parse(localStorage.getItem(this.ATTEMPT_KEY)||'[]');
+      const fp = this.getFingerprint();
+      data.push({fp,t:Date.now()});
+      localStorage.setItem(this.ATTEMPT_KEY, JSON.stringify(data.slice(-100)));
+      const recent = this.getAttempts();
+      if(recent.length >= this.MAX_ATTEMPTS){
+        localStorage.setItem(this.LOCK_KEY, JSON.stringify({until:Date.now()+this.LOCK_DURATION,fp,reason:'multiple_failed_attempts'}));
+        return true;
+      }
+      return false;
+    }catch(e){return false;}
+  },
+  clearAttempts(){
+    try{
+      const data = JSON.parse(localStorage.getItem(this.ATTEMPT_KEY)||'[]');
+      const fp = this.getFingerprint();
+      localStorage.setItem(this.ATTEMPT_KEY, JSON.stringify(data.filter(a => a.fp !== fp)));
+      localStorage.removeItem(this.LOCK_KEY);
+    }catch(e){}
+  },
+  remainingAttempts(){return this.MAX_ATTEMPTS - this.getAttempts().length;},
+  formatLockTime(ms){
+    if(ms <= 0)return "০:০০:০০";
+    const h = Math.floor(ms/3600000), m = Math.floor((ms%3600000)/60000), s = Math.floor((ms%60000)/1000);
+    return h+':'+String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
+  }
+};
+
+/* Firebase — আপনার আসল কনফিগ */
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getFirestore, collection, addDoc, doc, updateDoc, getDocs, query, where, orderBy, limit, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyB8uP-Wqmm_zkuU2GJFKFdu-g8SObvn_ac",
+  authDomain: "dollarhub-bd.firebaseapp.com",
+  projectId: "dollarhub-bd",
+  storageBucket: "dollarhub-bd.firebasestorage.app",
+  messagingSenderId: "896756770283",
+  appId: "1:896756770283:web:129d2e7189a9e7a58865ae"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const auth = getAuth(app);
+const googleProvider = new GoogleAuthProvider();
+googleProvider.setCustomParameters({prompt:'select_account'});
+let currentUser = null;
+
+/* কনফিগ */
+const CONFIG = {
+  whatsapp: "8801302627579",
+  nagadNumber: "01742310726",
+  paymentNumbers: {Nagad: {name:"নগদ", number:"01742310726", type:"Personal (Send Money)"}},
+  platforms: [
+    {id:"binance",name:"Binance",icon:"B",color:"#f0b90b",rate:132,active:true,note:"Binance Email / ID"},
+    {id:"binancepay",name:"Binance Pay",icon:"₿",color:"#8b5cf6",rate:130,active:true,note:"Binance Pay ID"},
+    {id:"bybit",name:"Bybit",icon:"Y",color:"#f7a600",rate:131,active:true,note:"Bybit UID / Email"},
+    {id:"okx",name:"OKX",icon:"O",color:"#000000",rate:131,active:true,note:"OKX UID / Email"},
+    {id:"bitget",name:"Bitget",icon:"G",color:"#00f0ff",rate:131,active:true,note:"Bitget UID / Email"},
+    {id:"mexc",name:"MEXC",icon:"M",color:"#00b897",rate:131,active:true,note:"MEXC UID / Email"},
+    {id:"kucoin",name:"KuCoin",icon:"K",color:"#24ae8f",rate:131,active:true,note:"KuCoin UID / Email"},
+    {id:"exness",name:"Exness",icon:"E",color:"#0ecb81",rate:133,active:true,note:"Account No + Server"},
+    {id:"hotforex",name:"Hot Forex",icon:"H",color:"#f6465d",rate:133,active:true,note:"Account No + Server"},
+    {id:"fxpro",name:"FXPro",icon:"F",color:"#3b82f6",rate:133,active:true,note:"Account No"},
+    {id:"quotex",name:"Quotex",icon:"Q",color:"#1e88e5",rate:135,active:true,note:"Binance Email"},
+    {id:"pocket",name:"Pocket Option",icon:"P",color:"#f59e0b",rate:135,active:true,note:"Binance Email"},
+    {id:"iqoption",name:"IQ Option",icon:"I",color:"#10b981",rate:135,active:true,note:"Binance Email"},
+    {id:"olymp",name:"Olymp Trade",icon:"O",color:"#ef4444",rate:135,active:true,note:"Binance Email"},
+    {id:"xm",name:"XM",icon:"X",color:"#e11d48",rate:133,active:true,note:"Account No + Server"},
+    {id:"icmarkets",name:"IC Markets",icon:"I",color:"#0ea5e9",rate:133,active:true,note:"Account No + Server"}
+  ]
+};
+
+/* হেল্পার */
+function esc(str){if(str===null||str===undefined)return"";return String(str).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;");}
+function clean(str,maxLen){if(!str)return"";return String(str).trim().slice(0,maxLen).replace(/[\u0000-\u001F\u007F]/g,"");}
+function validPhone(p){return /^01[3-9]\d{8}$/.test(p);}
+function rateLimit(key,ms){const last=parseInt(localStorage.getItem("rl_"+key)||"0",10);const now=Date.now();if(now-last<ms)return false;localStorage.setItem("rl_"+key,String(now));return true;}
+async function hashPhone(phone){const buf=new TextEncoder().encode(phone+"_dhbd");const h=await crypto.subtle.digest("SHA-256",buf);return Array.from(new Uint8Array(h)).map(b=>b.toString(16).padStart(2,"0")).join("").slice(0,16);}
+function genOrderId(){const arr=new Uint8Array(4);crypto.getRandomValues(arr);return "ORD-"+Array.from(arr).map(b=>b.toString(16).padStart(2,"0")).join("").toUpperCase();}
+async function hashImage(dataUrl){const base64=dataUrl.split(",")[1];const bin=atob(base64);const bytes=new Uint8Array(bin.length);for(let i=0;i<bin.length;i++)bytes[i]=bin.charCodeAt(i);const hb=await crypto.subtle.digest("SHA-256",bytes);return Array.from(new Uint8Array(hb)).map(b=>b.toString(16).padStart(2,"0")).join("");}
+function getImageMeta(dataUrl){return new Promise(resolve=>{const img=new Image();img.onload=()=>{const canvas=document.createElement("canvas");const w=Math.min(img.width,400);const h=Math.round(img.height*(w/img.width));canvas.width=w;canvas.height=h;const ctx=canvas.getContext("2d");ctx.drawImage(img,0,0,w,h);const data=ctx.getImageData(0,0,w,h).data;const gray=new Array(256).fill(0);let edgeSum=0,prev=null;for(let i=0;i<data.length;i+=4){const lum=Math.round(0.299*data[i]+0.587*data[i+1]+0.114*data[i+2]);gray[lum]++;if(prev!==null)edgeSum+=Math.abs(lum-prev);prev=lum;}resolve({width:img.width,height:img.height,aspect:+(img.width/img.height).toFixed(2),edgeDensity:+(edgeSum/(data.length/4)).toFixed(2),dynamicRange:gray.filter(v=>v>0).length,sizeKB:Math.round((dataUrl.length*3)/4/1024)});};img.onerror=()=>resolve(null);img.src=dataUrl;});}
+function computeTamperScore(meta){if(!meta)return{score:0,reasons:[]};let score=0;const reasons=[];if(meta.width<300||meta.height<300){score+=3;reasons.push("রেজোলিউশন কম");}if(meta.aspect<0.3||meta.aspect>5){score+=2;reasons.push("অনুপাত অস্বাভাবিক");}if(meta.dynamicRange<50){score+=2;reasons.push("রঙ কম");}if(meta.edgeDensity<3||meta.edgeDensity>80){score+=1;reasons.push("টেক্সচার অস্বাভাবিক");}if(meta.sizeKB<20){score+=2;reasons.push("সাইজ কম");}return{score:Math.min(score,10),reasons};}
+async function checkDuplicate(imageHash){try{const q=query(collection(db,"orders"),where("proofHash","==",imageHash),limit(1));const snap=await getDocs(q);return !snap.empty;}catch(err){return false;}}
+const $ = id => document.getElementById(id);
+
+/* Google Auth */
+const loginScreen=$("loginScreen"),blockedScreen=$("blockedScreen"),googleLoginBtn=$("googleLoginBtn"),loginError=$("loginError"),userChip=$("userChip"),userPhoto=$("userPhoto"),userName=$("userName");
+
+async function checkBlocked(email){try{const q=query(collection(db,"blocked"),where("email","==",email.toLowerCase()),limit(1));const snap=await getDocs(q);return !snap.empty;}catch(err){console.error("Block check error:",err);return false;}}
+
+googleLoginBtn.addEventListener("click", async () => {
+  loginError.style.display="none";googleLoginBtn.disabled=true;googleLoginBtn.innerHTML="⏳ সাইন ইন হচ্ছে...";
+  try{
+    const result = await signInWithPopup(auth, googleProvider);
+    const user = result.user;
+    const blocked = await checkBlocked(user.email);
+    if(blocked){await signOut(auth);showBlockedScreen();return;}
+    currentUser = user;hideLoginScreen();updateUserChip(user);
+  }catch(err){
+    console.error("Login error:",err);
+    let msg = "❌ সাইন ইন করতে সমস্যা হয়েছে।";
+    if(err.code==="auth/popup-closed-by-user")msg="⚠️ সাইন ইন বাতিল করা হয়েছে।";
+    else if(err.code==="auth/popup-blocked")msg="⚠️ Popup ব্লক করা হয়েছে। Allow করুন।";
+    else if(err.code==="auth/unauthorized-domain")msg="⚠️ এই domain Firebase-এ authorized নয়। Firebase Console → Authentication → Settings → Authorized domains এ যোগ করুন।";
+    else if(err.code==="auth/configuration-not-found")msg="⚠️ Firebase Console-এ Google Sign-In enable করা হয়নি।";
+    loginError.textContent=msg;loginError.style.display="block";
+    googleLoginBtn.disabled=false;googleLoginBtn.innerHTML='Google দিয়ে সাইন ইন করুন';
+  }
+});
+
+function hideLoginScreen(){loginScreen.style.display="none";document.body.style.overflow="";}
+function showLoginScreen(){loginScreen.style.display="flex";document.body.style.overflow="hidden";googleLoginBtn.disabled=false;googleLoginBtn.innerHTML='Google দিয়ে সাইন ইন করুন';loginError.style.display="none";userChip.style.display="none";}
+function showBlockedScreen(){loginScreen.style.display="none";blockedScreen.style.display="flex";document.body.style.overflow="hidden";}
+function updateUserChip(user){
+  if(user){
+    userName.textContent = user.displayName || user.email?.split("@")[0] || "User";
+    userPhoto.src = user.photoURL || "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23f0b90b'/%3E%3C/svg%3E";
+    userChip.style.display="flex";
+  }
+}
+
+$("blockedLogout").addEventListener("click", async () => {await signOut(auth);blockedScreen.style.display="none";showLoginScreen();});
+userChip.addEventListener("click", async () => {if(confirm("লগআউট করতে চান?")){await signOut(auth);}});
+
+onAuthStateChanged(auth, async (user) => {
+  if(user){
+    const blocked = await checkBlocked(user.email);
+    if(blocked){await signOut(auth);showBlockedScreen();return;}
+    currentUser = user;hideLoginScreen();updateUserChip(user);
+  }else{
+    currentUser = null;blockedScreen.style.display="none";showLoginScreen();
+  }
+});
+
+/* UI */
+$("menuToggle").addEventListener("click",()=>$("navLinks").classList.toggle("open"));
+document.querySelectorAll("#navLinks a").forEach(a=>a.addEventListener("click",()=>$("navLinks").classList.remove("open")));
+
+const platGrid=$("platformsGrid");
+CONFIG.platforms.forEach(p=>{
+  const div=document.createElement("div");
+  div.className="plat";
+  div.addEventListener("click",()=>{
+    if(!p.active){alert("এই প্ল্যাটফর্মটি বর্তমানে বন্ধ।");return;}
+    const sel=$("fPlatform");sel.value=p.id;sel.dispatchEvent(new Event("change"));$("order").scrollIntoView({behavior:"smooth"});
+  });
+  div.innerHTML=`<div class="stock ${p.active?"":"off"}">${p.active?"চালু":"বন্ধ"}</div><div class="plat-logo" style="background:${esc(p.color)}">${esc(p.icon)}</div><h4>${esc(p.name)}</h4><small>${esc(p.note)}</small><div class="rate">রেট: <b>৳${p.rate}</b> / USD</div>`;
+  platGrid.appendChild(div);
+});
+
+const platformSelect=$("fPlatform");
+CONFIG.platforms.filter(p=>p.active).forEach(p=>{
+  const o=document.createElement("option");o.value=p.id;o.textContent=`${p.name} — ৳${p.rate}/USD`;platformSelect.appendChild(o);
+});
+
+const usdInput=$("fUsd"),amountBox=$("amountBox"),proofInput=$("proofInput"),preview=$("preview"),uploadBox=$("uploadBox"),proofStatus=$("proofStatus"),proofMeta=$("proofMeta");
+let proofDataUrl=null,proofImageHash=null,proofMetaData=null,isSubmitting=false;
+
+function getSelectedPlatform(){return CONFIG.platforms.find(p=>p.id===platformSelect.value);}
+function updateAmount(){const p=getSelectedPlatform();const usd=parseFloat(usdInput.value)||0;if(!p||usd<5){amountBox.style.display="none";return;}amountBox.style.display="grid";$("outUsd").textContent="$"+usd.toFixed(2);$("outRate").textContent="৳"+p.rate;$("outTotal").textContent="৳"+Math.round(usd*p.rate).toLocaleString("en-IN");}
+usdInput.addEventListener("input",updateAmount);
+platformSelect.addEventListener("change",()=>{updateAmount();if(getSelectedPlatform()){$("step2").classList.add("active");$("step3").classList.add("active");}});
+
+$("copyNagadBtn").addEventListener("click",async()=>{
+  const number=CONFIG.nagadNumber;
+  try{await navigator.clipboard.writeText(number);const btn=$("copyNagadBtn");btn.textContent="✅ কপি হয়েছে!";btn.style.background="#0bb372";setTimeout(()=>{btn.textContent="📋 নগদ নাম্বার কপি করুন";btn.style.background="#0ecb81";},2000);}catch(err){const ta=document.createElement("textarea");ta.value=number;document.body.appendChild(ta);ta.select();document.execCommand("copy");ta.remove();alert("✅ কপি হয়েছে: "+number);}
+});
+
+proofInput.addEventListener("change",async(e)=>{
+  const file=e.target.files[0];if(!file)return;
+  const allowed=["image/png","image/jpeg","image/jpg","image/webp"];
+  if(!allowed.includes(file.type)){showProofError("❌ শুধু JPG, PNG বা WebP ছবি।");proofInput.value="";return;}
+  if(file.size>2*1024*1024){showProofError("❌ ছবি ২ MB এর কম হতে হবে।");proofInput.value="";return;}
+  if(file.size<8*1024){showProofError("❌ ছবিটি খুব ছোট।");proofInput.value="";return;}
+  proofStatus.style.display="block";proofStatus.innerHTML=`<div style="color:#1e88e5;">🔄 বিশ্লেষণ করা হচ্ছে...</div>`;
+  const reader=new FileReader();
+  reader.onload=async(ev)=>{
+    proofDataUrl=ev.target.result;
+    proofMetaData=await getImageMeta(proofDataUrl);
+    const tamper=computeTamperScore(proofMetaData);
+    proofImageHash=await hashImage(proofDataUrl);
+    proofStatus.innerHTML=`<div style="color:#1e88e5;">🔄 ডুপ্লিকেট যাচাই...</div>`;
+    const isDuplicate=await checkDuplicate(proofImageHash);
+    preview.style.display="block";
+    preview.innerHTML=`<img src="${proofDataUrl}" alt="proof" /><button type="button" class="remove-btn" id="removeProof">✕</button>`;
+    uploadBox.classList.add("captured");
+    if(isDuplicate){proofStatus.innerHTML=`<div class="proof-warn danger">⚠️ <b>এই ছবিটি আগেও ব্যবহার হয়েছে!</b></div>`;proofDataUrl=null;proofImageHash=null;uploadBox.classList.remove("captured");return;}
+    if(tamper.score>=5){proofStatus.innerHTML=`<div class="proof-warn warn">⚠️ <b>ছবিটি সন্দেহজনক।</b> ${tamper.reasons.join(", ")}</div>`;}
+    else if(tamper.score>=3){proofStatus.innerHTML=`<div class="proof-warn warn">ℹ️ ছবি যাচাই হয়েছে তবে অস্বাভাবিক।</div>`;}
+    else{proofStatus.innerHTML=`<div class="proof-warn ok">✅ ছবি যোগ হয়েছে (${(file.size/1024).toFixed(0)} KB)</div>`;}
+    if(proofMetaData){proofMeta.style.display="grid";proofMeta.innerHTML=`<div><small>রেজোলিউশন</small><b>${proofMetaData.width}×${proofMetaData.height}</b></div><div><small>সাইজ</small><b>${proofMetaData.sizeKB} KB</b></div><div><small>স্কোর</small><b style="color:${tamper.score>=5?'#f6465d':tamper.score>=3?'#f59e0b':'#0ecb81'}">${tamper.score}/10</b></div>`;}
+    $("removeProof").addEventListener("click",()=>{proofDataUrl=null;proofImageHash=null;proofMetaData=null;proofInput.value="";preview.style.display="none";preview.innerHTML="";uploadBox.classList.remove("captured");proofStatus.style.display="none";proofMeta.style.display="none";});
+  };
+  reader.readAsDataURL(file);
+});
+
+function showProofError(msg){preview.style.display="none";proofDataUrl=null;proofImageHash=null;proofMetaData=null;uploadBox.classList.remove("captured");proofStatus.style.display="block";proofStatus.innerHTML=`<div class="proof-warn danger">${msg}</div>`;}
+
+/* সাবমিট */
+$("orderForm").addEventListener("submit",async(e)=>{
+  e.preventDefault();
+  if(isSubmitting)return;
+  if(!currentUser){alert("⚠️ অর্ডার করতে সাইন ইন করুন!");showLoginScreen();return;}
+  const honeypot=$("hp_field").value;if(honeypot){alert("❌ Suspicious activity detected.");return;}
+  const name=clean($("fName").value,60),phone=clean($("fPhone").value,11),platform=getSelectedPlatform(),accountId=clean($("fAccountId").value,80),usd=parseFloat($("fUsd").value),payMethod=$("fPayMethod").value,trx=clean($("fTrx").value,30);
+  if(name.length<2){alert("সঠিক নাম লিখুন।");return;}
+  if(!validPhone(phone)){alert("সঠিক মোবাইল নম্বর লিখুন।");return;}
+  if(!platform){alert("প্ল্যাটফর্ম বেছে নিন।");return;}
+  if(accountId.length<3){alert("প্ল্যাটফর্ম আইডি লিখুন।");return;}
+  if(!(usd>=5&&usd<=5000)){alert("ডলার $৫ থেকে $৫০০০ এর মধ্যে হতে হবে।");return;}
+  if(!payMethod||!CONFIG.paymentNumbers[payMethod]){alert("পেমেন্ট মাধ্যম বেছে নিন।");return;}
+  if(!proofDataUrl||!proofImageHash){alert("⚠️ পেমেন্টের ছবি আপলোড বাধ্যতামূলক!");$("proofSection").scrollIntoView({behavior:"smooth",block:"center"});return;}
+  if(trx.length<6){alert("সঠিক TrxID লিখুন।");return;}
+  if(!/^[A-Za-z0-9]+$/.test(trx)){alert("TrxID-তে শুধু ইংরেজি অক্ষর ও সংখ্যা।");return;}
+  if(!rateLimit("order",60000)){alert("একটু অপেক্ষা করুন।");return;}
+  isSubmitting=true;
+  const submitBtn=$("submitBtn");submitBtn.disabled=true;submitBtn.textContent="পাঠানো হচ্ছে...";
+  try{
+    const orderId=genOrderId(),phoneHash=await hashPhone(phone),total=Math.round(usd*platform.rate),tamper=computeTamperScore(proofMetaData);
+    await addDoc(collection(db,"orders"),{
+      orderId,name,phone,phoneHash,platform:platform.name,platformId:platform.id,accountId,usd,rate:platform.rate,total,payMethod,trx,proof:proofDataUrl,proofHash:proofImageHash,proofMeta:proofMetaData||{},tamperScore:tamper.score,tamperReasons:tamper.reasons,
+      userEmail:(currentUser.email||"").toLowerCase(),userId:currentUser.uid||"",userName:currentUser.displayName||"",userPhoto:currentUser.photoURL||"",
+      status:"pending",createdAt:serverTimestamp(),statusChangedAt:serverTimestamp()
+    });
+    $("successOid").textContent=orderId;$("successBox").classList.add("show");$("step4").classList.add("active");
+    $("orderForm").reset();proofDataUrl=null;proofImageHash=null;proofMetaData=null;preview.style.display="none";preview.innerHTML="";uploadBox.classList.remove("captured");proofStatus.style.display="none";proofMeta.style.display="none";amountBox.style.display="none";
+    const waText=encodeURIComponent(`আসসালামু আলাইকুম।\nঅর্ডার আইডি: ${orderId}\nনাম: ${name}\nপ্ল্যাটফর্ম: ${platform.name}\nডলার: $${usd}\nমোট: ৳${total}\nTrxID: ${trx}`);
+    setTimeout(()=>{if(confirm("অর্ডার জমা হয়েছে! WhatsApp-এ অ্যাডমিনকে জানাতে চান?")){window.open(`https://wa.me/${CONFIG.whatsapp}?text=${waText}`,"_blank","noopener");}},400);
+    $("order").scrollIntoView({behavior:"smooth"});
+  }catch(err){console.error(err);alert("দুঃখিত, সাবমিট করা যায়নি।");}
+  finally{isSubmitting=false;submitBtn.disabled=false;submitBtn.textContent="অর্ডার কনফার্ম করুন";}
+});
+
+/* ট্র্যাকিং */
+$("trackBtn").addEventListener("click",async()=>{
+  const oid=clean($("trackOid").value,20).toUpperCase(),phone=clean($("trackPhone").value,11),result=$("orderResult");
+  if(!oid||!validPhone(phone)){result.style.display="block";result.innerHTML=`<div class="alert alert-error show">❌ সঠিক তথ্য দিন।</div>`;return;}
+  result.style.display="block";result.innerHTML=`<div style="text-align:center;padding:20px;color:#848e9c;">খোঁজা হচ্ছে...</div>`;
+  try{
+    const phoneHash=await hashPhone(phone);
+    const q=query(collection(db,"orders"),where("orderId","==",oid),where("phoneHash","==",phoneHash),limit(1));
+    const snap=await getDocs(q);
+    if(snap.empty){result.innerHTML=`<div class="alert alert-error show">❌ কোনো অর্ডার পাওয়া যায়নি।</div>`;return;}
+    const o=snap.docs[0].data();
+    const sm={pending:{c:"st-pending",t:"⏳ Pending"},processing:{c:"st-processing",t:"🔄 Processing"},completed:{c:"st-completed",t:"✅ Completed"},rejected:{c:"st-rejected",t:"❌ Rejected"}};
+    const st=sm[o.status]||sm.pending;
+    const dateStr=o.createdAt?.toDate?o.createdAt.toDate().toLocaleString("bn-BD"):"-";
+    result.innerHTML=`<div class="order-card"><div class="row"><span>অর্ডার আইডি</span><span>${esc(o.orderId)}</span></div><div class="row"><span>প্ল্যাটফর্ম</span><span>${esc(o.platform)}</span></div><div class="row"><span>ডলার</span><span>$${esc(o.usd)}</span></div><div class="row"><span>মোট</span><span>৳${esc(o.total)}</span></div><div class="row"><span>তারিখ</span><span>${esc(dateStr)}</span></div><div class="row"><span>স্ট্যাটাস</span><span><span class="status-pill ${st.c}">${st.t}</span></span></div>${o.note?`<div class="row"><span>নোট</span><span>${esc(o.note)}</span></div>`:""}</div>`;
+  }catch(err){result.innerHTML=`<div class="alert alert-error show">❌ সমস্যা হয়েছে।</div>`;}
+});
+
+/* অ্যাডমিন */
+const gateModal=$("gateModal"),gateInput=$("gateInput"),gateErr=$("gateErr"),gateBtn=$("gateBtn"),adminPanel=$("adminPanel"),gateLocked=$("gateLocked"),lockTimer=$("lockTimer"),gateForm=$("gateForm"),attemptInfo=$("attemptInfo");
+let lockInterval = null;
+
+function updateLockUI(){
+  const lock = SECURITY.isLocked();
+  if(lock){
+    gateLocked.classList.add("show");gateForm.style.display="none";
+    const update = () => {
+      const r = lock.until - Date.now();
+      if(r <= 0){clearInterval(lockInterval);gateLocked.classList.remove("show");gateForm.style.display="block";attemptInfo.textContent=SECURITY.MAX_ATTEMPTS+"টি চেষ্টা";}
+      else{lockTimer.textContent=SECURITY.formatLockTime(r);}
+    };
+    update();
+    if(lockInterval)clearInterval(lockInterval);
+    lockInterval=setInterval(update,1000);
+  }else{
+    gateLocked.classList.remove("show");gateForm.style.display="block";
+    attemptInfo.textContent=SECURITY.remainingAttempts()+"টি চেষ্টা বাকি";
+  }
+}
+
+function openGate(){
+  if(sessionStorage.getItem("dh_admin")==="ok"){openAdminPanel();return;}
+  gateModal.classList.add("show");gateInput.value="";gateErr.classList.remove("show");gateBtn.textContent="প্রবেশ করুন";gateBtn.style.background="#f0b90b";gateBtn.disabled=false;
+  updateLockUI();
+  if(!SECURITY.isLocked()){setTimeout(()=>gateInput.focus(),100);}
+}
+document.getElementById("adminLinkTop").addEventListener("click",openGate);
+$("gateCancel").addEventListener("click",()=>gateModal.classList.remove("show"));
+gateModal.addEventListener("click",(e)=>{if(e.target.id==="gateModal")gateModal.classList.remove("show");});
+
+function checkPass(){
+  if(SECURITY.isLocked()){updateLockUI();return;}
+  const v=gateInput.value;gateErr.classList.remove("show");
+  if(!v){gateErr.textContent="⚠️ পাসওয়ার্ড লিখুন।";gateErr.classList.add("show");return;}
+  if(v===_adminPass){
+    SECURITY.clearAttempts();gateBtn.textContent="✓ প্রবেশ হচ্ছে...";gateBtn.style.background="#0ecb81";
+    sessionStorage.setItem("dh_admin","ok");sessionStorage.setItem("dh_login_time",Date.now().toString());
+    setTimeout(()=>{gateModal.classList.remove("show");openAdminPanel();},400);
+  }else{
+    const locked=SECURITY.recordFail(),remaining=SECURITY.remainingAttempts();
+    gateInput.value="";gateInput.focus();gateBtn.disabled=true;setTimeout(()=>{gateBtn.disabled=false;},800);
+    if(locked){gateErr.textContent="🚫 ৩ বার ভুল হয়েছে! ৩ ঘণ্টার জন্য ব্লক।";gateErr.classList.add("show");gateBtn.style.background="#f6465d";gateBtn.textContent="🚫 ব্লক করা হয়েছে";setTimeout(updateLockUI,1500);}
+    else{gateErr.textContent=`❌ ভুল পাসওয়ার্ড! ${remaining}টি চেষ্টা বাকি।`;gateErr.classList.add("show");updateLockUI();}
+  }
+}
+gateBtn.addEventListener("click",checkPass);
+gateInput.addEventListener("keydown",e=>{if(e.key==="Enter")checkPass();});
+
+function openAdminPanel(){adminPanel.classList.add("show");document.body.style.overflow="hidden";loadOrders();}
+$("apLogout").addEventListener("click",()=>{sessionStorage.removeItem("dh_admin");sessionStorage.removeItem("dh_login_time");adminPanel.classList.remove("show");document.body.style.overflow="";apToast("👋 লগআউট হয়েছে","info");});
+
+let inactivityTimer = null;
+function resetInactivity(){
+  if(inactivityTimer)clearTimeout(inactivityTimer);
+  if(adminPanel.classList.contains("show")){
+    inactivityTimer=setTimeout(()=>{sessionStorage.removeItem("dh_admin");adminPanel.classList.remove("show");document.body.style.overflow="";alert("⏰ ১৫ মিনিট নিষ্ক্রিয় ছিলেন। স্বয়ংক্রিয়ভাবে লগআউট হয়েছে।");},15*60*1000);
+  }
+}
+['mousemove','keydown','click','scroll','touchstart'].forEach(ev=>{document.addEventListener(ev,resetInactivity,{passive:true});});
+
+let allOrders=[],currentRange="today",selectedPlatform="";
+
+async function loadOrders(){
+  const tbody=$("apOrdersBody");tbody.innerHTML=`<tr><td colspan="8" class="ap-loading">লোড হচ্ছে...</td></tr>`;
+  try{
+    const q=query(collection(db,"orders"),orderBy("createdAt","desc"),limit(300));
+    const snap=await getDocs(q);
+    allOrders=snap.docs.map(d=>({_id:d.id,...d.data()}));
+    renderAll();
+  }catch(err){console.error(err);tbody.innerHTML=`<tr><td colspan="8" class="ap-loading">লোড করা যায়নি।</td></tr>`;}
+}
+$("apRefresh").addEventListener("click",()=>{loadOrders();apToast("🔄 রিফ্রেশ হয়েছে","info");});
+
+function renderStats(){
+  $("apTotal").textContent=allOrders.length;
+  $("apPending").textContent=allOrders.filter(o=>o.status==="pending").length;
+  $("apCompleted").textContent=allOrders.filter(o=>o.status==="completed").length;
+  const totalUsd=allOrders.filter(o=>o.status==="completed").reduce((s,o)=>s+(o.usd||0),0);
+  $("apUsd").textContent="$"+totalUsd.toFixed(2);
+}
+
+function renderPlatformBreakdown(){
+  const platforms={};
+  allOrders.forEach(o=>{const p=o.platform||"Unknown";if(!platforms[p])platforms[p]={total:0,pending:0,completed:0,usd:0};platforms[p].total++;if(o.status==="pending")platforms[p].pending++;if(o.status==="completed"){platforms[p].completed++;platforms[p].usd+=o.usd||0;}});
+  const list=Object.entries(platforms).sort((a,b)=>b[1].total-a[1].total);
+  const grid=$("apPlatforms");
+  if(!list.length){grid.innerHTML=`<div class="ap-empty" style="grid-column:1/-1;">এখনো কোনো অর্ডার নেই</div>`;return;}
+  const colors={Binance:"#f0b90b","Binance Pay":"#8b5cf6",Bybit:"#f7a600",OKX:"#000",Bitget:"#00f0ff",MEXC:"#00b897",KuCoin:"#24ae8f",Exness:"#0ecb81","Hot Forex":"#f6465d",FXPro:"#3b82f6",Quotex:"#1e88e5","Pocket Option":"#f59e0b","IQ Option":"#10b981","Olymp Trade":"#ef4444",XM:"#e11d48","IC Markets":"#0ea5e9"};
+  grid.innerHTML=list.map(([name,data])=>{const active=selectedPlatform===name?"active":"";const color=colors[name]||"#848e9c";return `<div class="ap-plat ${active}" data-platform="${esc(name)}"><div class="nm"><span class="dt" style="background:${color};box-shadow:0 0 8px ${color};"></span>${esc(name)}</div><div class="num">${data.total}</div><div class="sub">${data.pending} pending • ${data.completed} completed</div><div class="usd"><span style="color:#848e9c;">সফল:</span><span><b>$${data.usd.toFixed(2)}</b></span></div></div>`;}).join("");
+  grid.querySelectorAll(".ap-plat").forEach(c=>{c.addEventListener("click",()=>{const p=c.dataset.platform;selectedPlatform=(selectedPlatform===p)?"":p;renderAll();});});
+}
+
+document.querySelectorAll(".ap-shortcuts button").forEach(btn=>{btn.addEventListener("click",()=>{document.querySelectorAll(".ap-shortcuts button").forEach(b=>b.classList.remove("active"));btn.classList.add("active");currentRange=btn.dataset.range;renderAll();});});
+$("apStatus").addEventListener("change",renderAll);
+$("apSort").addEventListener("change",renderAll);
+$("apSearch").addEventListener("input",renderAll);
+$("apClear").addEventListener("click",()=>{currentRange="all";selectedPlatform="";$("apStatus").value="";$("apSort").value="newest";$("apSearch").value="";document.querySelectorAll(".ap-shortcuts button").forEach(b=>b.classList.remove("active"));document.querySelector('.ap-shortcuts button[data-range="all"]').classList.add("active");renderAll();apToast("ফিল্টার মুছে ফেলা হয়েছে","info");});
+
+function getDateRange(){
+  const now=new Date();const start=new Date();start.setHours(0,0,0,0);const end=new Date();end.setHours(23,59,59,999);
+  switch(currentRange){
+    case "today":return{start,end};
+    case "yesterday":{const s=new Date(start);s.setDate(s.getDate()-1);const e=new Date(end);e.setDate(e.getDate()-1);return{start:s,end:e};}
+    case "week":{const s=new Date(start);const d=s.getDay();const diff=d===0?6:d-1;s.setDate(s.getDate()-diff);return{start:s,end};}
+    case "month":return{start:new Date(now.getFullYear(),now.getMonth(),1),end};
+    case "all":return null;
+    default:return null;
+  }
+}
+
+function renderAll(){renderStats();renderPlatformBreakdown();renderOrders();}
+
+function renderOrders(){
+  const range=getDateRange(),status=$("apStatus").value,sortBy=$("apSort").value,search=$("apSearch").value.toLowerCase().trim();
+  let list=allOrders.filter(o=>{
+    const t=o.createdAt?.toDate?o.createdAt.toDate():new Date(o.createdAt||0);
+    if(range&&(t<range.start||t>range.end))return false;
+    if(status&&o.status!==status)return false;
+    if(selectedPlatform&&o.platform!==selectedPlatform)return false;
+    if(search){const hay=`${o.orderId||""} ${o.name||""} ${o.phone||""} ${o.trx||""} ${o.userEmail||""}`.toLowerCase();if(!hay.includes(search))return false;}
+    return true;
+  });
+  if(sortBy==="newest")list.sort((a,b)=>(b.createdAt?.seconds||0)-(a.createdAt?.seconds||0));
+  else if(sortBy==="oldest")list.sort((a,b)=>(a.createdAt?.seconds||0)-(b.createdAt?.seconds||0));
+  else if(sortBy==="amount")list.sort((a,b)=>(b.usd||0)-(a.usd||0));
+  $("apCount").textContent=list.length;
+  const tbody=$("apOrdersBody");
+  if(!list.length){tbody.innerHTML=`<tr><td colspan="8" class="ap-empty">এই ফিল্টারে কোনো অর্ডার নেই</td></tr>`;return;}
+  const pill={pending:`<span class="ap-pill ap-pending">Pending</span>`,processing:`<span class="ap-pill ap-processing">Processing</span>`,completed:`<span class="ap-pill ap-completed">Completed</span>`,rejected:`<span class="ap-pill ap-rejected">Rejected</span>`};
+  tbody.innerHTML=list.map(o=>{
+    const t=o.createdAt?.toDate?o.createdAt.toDate():null;
+    const ts=t?t.toLocaleString("bn-BD",{day:"2-digit",month:"short",hour:"2-digit",minute:"2-digit"}):"-";
+    return `<tr><td style="font-size:12px;color:#848e9c;white-space:nowrap;">${esc(ts)}</td><td><b style="color:#fff;">${esc(o.name)}</b><br/><small style="color:#848e9c;">${esc(o.phone)}</small><br/><small style="color:#60a5fa;font-size:10.5px;">${esc((o.userEmail||"").slice(0,22))}</small></td><td><span style="color:var(--primary);font-weight:700;">${esc(o.platform)}</span><br/><small style="color:#848e9c;">${esc((o.accountId||"").slice(0,22))}</small></td><td><b style="color:var(--green);font-size:14px;">$${esc(o.usd)}</b></td><td><b>৳${esc(o.total)}</b></td><td class="ap-trx">${esc(o.trx||"-")}</td><td>${pill[o.status]||""}</td><td><div class="ap-acts"><button class="ap-view" data-act="view" data-id="${esc(o._id)}">বিস্তারিত</button>${o.status==="pending"?`<button class="ap-ok" data-act="approve" data-id="${esc(o._id)}">✓ Approve</button>`:""}${o.status==="processing"?`<button class="ap-ok" data-act="complete" data-id="${esc(o._id)}">✓ Complete</button>`:""}${o.status!=="completed"&&o.status!=="rejected"?`<button class="ap-no" data-act="reject" data-id="${esc(o._id)}">✕ Reject</button>`:""}</div></td></tr>`;
+  }).join("");
+  tbody.querySelectorAll("button[data-act]").forEach(btn=>{
+    btn.addEventListener("click",()=>{
+      const act=btn.dataset.act,id=btn.dataset.id;
+      if(act==="view")viewOrder(id);
+      else if(act==="approve")approveOrder(id);
+      else if(act==="complete")completeOrder(id);
+      else if(act==="reject")rejectOrder(id);
+    });
+  });
+}
+
+async function approveOrder(id){if(!confirm("এই অর্ডারটি Approve করবেন?"))return;try{await updateDoc(doc(db,"orders",id),{status:"processing",statusChangedAt:serverTimestamp()});apToast("✅ Approve হয়েছে","success");await loadOrders();}catch(err){apToast("❌ সমস্যা","error");}}
+async function completeOrder(id){if(!confirm("ডলার পাঠানো হয়েছে? Complete?"))return;try{await updateDoc(doc(db,"orders",id),{status:"completed",completedAt:serverTimestamp(),statusChangedAt:serverTimestamp()});apToast("✅ Complete হয়েছে","success");await loadOrders();}catch(err){apToast("❌ সমস্যা","error");}}
+async function rejectOrder(id){const note=prompt("বাতিলের কারণ:","পেমেন্ট যাচাই করা যায়নি");if(note===null)return;try{await updateDoc(doc(db,"orders",id),{status:"rejected",note:note.slice(0,200),statusChangedAt:serverTimestamp()});apToast("❌ Reject হয়েছে","info");await loadOrders();}catch(err){apToast("❌ সমস্যা","error");}}
+
+function viewOrder(id){
+  const o=allOrders.find(x=>x._id===id);if(!o)return;
+  const dateStr=o.createdAt?.toDate?o.createdAt.toDate().toLocaleString("bn-BD"):"-";
+  const ts=o.tamperScore||0,tc=ts>=5?"#f6465d":ts>=3?"#f59e0b":"#0ecb81",tl=ts>=5?"🔴 উচ্চ ঝুঁকি":ts>=3?"🟡 মাঝারি":"🟢 পরিষ্কার";
+  let tamperHTML="";
+  if(ts>=3){tamperHTML=`<div class="ap-warn ${ts>=5?"danger":"warn"}">⚠️ <b>সন্দেহ স্কোর: ${ts}/10 (${tl})</b><br/>${(o.tamperReasons||[]).map(r=>"• "+esc(r)).join("<br/>")}</div>`;}
+  let dupHTML="";
+  if(o.proofHash){const dup=allOrders.filter(x=>x.proofHash===o.proofHash&&x._id!==o._id);if(dup.length>0){dupHTML=`<div class="ap-warn danger">🚨 <b>এই ছবি ${dup.length}টি অন্য অর্ডারেও আছে!</b></div>`;}}
+  let userBox="";
+  if(o.userEmail){
+    userBox=`<div class="ap-user-box"><div class="ap-drow"><span>👤 Google Email</span><span>${esc(o.userEmail)}</span></div><div class="ap-drow"><span>🆔 User ID</span><span style="font-size:11px;font-family:monospace;">${esc((o.userId||"").slice(0,20))}...</span></div>${o.userName?`<div class="ap-drow"><span>📛 Google Name</span><span>${esc(o.userName)}</span></div>`:""}<div class="ap-actions-row"><button class="ap-block-btn" onclick="blockUser('${esc(o.userEmail)}','${esc(o.userName||o.name)}')">🚫 এই ইউজারকে ব্লক করুন</button><a class="ap-mail-btn" href="mailto:${esc(o.userEmail)}">📧 ইমেইল পাঠান</a></div></div>`;
+  }
+  $("apModalContent").innerHTML=`<div class="ap-drow"><span>অর্ডার আইডি</span><span class="ap-oid">${esc(o.orderId)}</span></div><div class="ap-drow"><span>নাম</span><span>${esc(o.name)}</span></div><div class="ap-drow"><span>মোবাইল</span><span>${esc(o.phone)}</span></div><div class="ap-drow"><span>প্ল্যাটফর্ম</span><span style="color:var(--primary);">${esc(o.platform)}</span></div><div class="ap-drow"><span>প্ল্যাটফর্ম আইডি</span><span>${esc(o.accountId)}</span></div><div class="ap-drow"><span>ডলার</span><span style="color:var(--green);">$${esc(o.usd)}</span></div><div class="ap-drow"><span>রেট</span><span>৳${esc(o.rate)}</span></div><div class="ap-drow"><span>মোট</span><span>৳${esc(o.total)}</span></div><div class="ap-drow"><span>পেমেন্ট</span><span>${esc(o.payMethod)}</span></div><div class="ap-drow"><span>TrxID</span><span class="ap-trx">${esc(o.trx)}</span></div><div class="ap-drow"><span>সময়</span><span>${esc(dateStr)}</span></div>${o.proofMeta?`<div class="ap-drow"><span>ছবির মাপ</span><span>${o.proofMeta.width}×${o.proofMeta.height}</span></div><div class="ap-drow"><span>ছবির সাইজ</span><span>${o.proofMeta.sizeKB} KB</span></div>`:""}<div class="ap-drow"><span>সন্দেহ স্কোর</span><span style="color:${tc};font-weight:800;">${ts}/10 (${tl})</span></div>${dupHTML}${tamperHTML}${userBox}${o.proof?`<div style="margin-top:16px;"><p style="color:#848e9c;font-size:12.5px;margin-bottom:8px;">পেমেন্ট স্ক্রিনশট:</p><img class="ap-proof" src="${esc(o.proof)}" alt="proof" onclick="window.open(this.src,'_blank')" /></div>`:`<p style="color:var(--red);margin-top:12px;">⚠️ প্রমাণ ছবি নেই</p>`}<div style="margin-top:18px;display:flex;gap:8px;flex-wrap:wrap;"><a href="https://wa.me/88${esc(o.phone)}" target="_blank" rel="noopener" style="background:#25D366;color:#fff;padding:9px 16px;border-radius:9px;font-weight:700;font-size:13px;
