@@ -561,7 +561,7 @@ footer a:hover{color:#f0b90b}
 /* ==== Firebase imports (must be at top of module) ==== */
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import { getFirestore, collection, addDoc, doc, updateDoc, getDocs, query, where, orderBy, limit, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-import { getAuth, GoogleAuthProvider, signInWithRedirect, getRedirectResult, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import { getAuth, GoogleAuthProvider, signInWithRedirect, getRedirectResult, signOut, onAuthStateChanged, setPersistence, browserLocalPersistence } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyB8uP-Wqmm_zkuU2GJFKFdu-g8SObvn_ac",
@@ -575,6 +575,18 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
+
+// ==== FIX START: Login Loop Issue ====
+// মোবাইল ব্রাউজারে বারবার লগইন পেজে ফিরে আসা বন্ধ করার জন্য সেশন সেভ করা
+setPersistence(auth, browserLocalPersistence)
+  .then(() => {
+    console.log("Persistence set to LOCAL");
+  })
+  .catch((error) => {
+    console.error("Persistence error:", error);
+  });
+// ==== FIX END ====
+
 const provider = new GoogleAuthProvider();
 provider.setCustomParameters({ prompt: 'select_account' });
 
