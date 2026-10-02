@@ -147,8 +147,6 @@ footer a:hover{color:#f0b90b}
 .alert.ok{background:#e6f9f0;color:#0a8053;border-left:4px solid #0ecb81}
 .alert.err{background:#fde8eb;color:#b02c3f;border-left:4px solid #f6465d}
 .alert.info{background:#e8f2fd;color:#1565c0;border-left:4px solid #1e88e5}
-
-/* ===== Login screen (fixed) ===== */
 .ls{position:fixed;inset:0;background:radial-gradient(circle at 50% 30%,#1a1f24,#0b0e11);z-index:99999;display:flex;align-items:center;justify-content:center;padding:24px}
 .lcard{width:100%;max-width:400px;background:#1e2329;border:1px solid #2b3139;border-radius:20px;padding:40px 30px;text-align:center}
 .lcard .logo-svg{width:90px;height:90px;margin:0 auto 20px;display:block;filter:drop-shadow(0 0 20px rgba(240,185,11,.6))}
@@ -159,7 +157,6 @@ footer a:hover{color:#f0b90b}
 .gbtn:disabled{opacity:.6;cursor:not-allowed;transform:none!important}
 .gbtn svg{width:20px !important;height:20px !important;flex-shrink:0;margin:0}
 .lnote{color:#5b6472;font-size:11.5px;margin-top:24px;line-height:1.7}
-/* Blocked screen */
 .bs{display:none;position:fixed;inset:0;background:#0b0e11;z-index:99999;align-items:center;justify-content:center;padding:24px}
 .bcard{width:100%;max-width:400px;background:#1e2329;border:1.5px solid #f6465d;border-radius:20px;padding:40px 30px;text-align:center;box-shadow:0 0 60px rgba(246,70,93,.3)}
 .bcard .em{font-size:70px;margin-bottom:20px}
@@ -167,7 +164,6 @@ footer a:hover{color:#f0b90b}
 .bcard p{color:#848e9c;font-size:14px;line-height:1.7;margin-bottom:24px}
 .bcard a{display:inline-block;margin-top:20px;background:#25D366;color:#fff;padding:12px 24px;border-radius:10px;font-weight:700;font-size:14px}
 .bcard button{display:block;width:100%;margin-top:12px;padding:11px;background:transparent;color:#848e9c;border:1px solid #2b3139;border-radius:10px;font-weight:600;font-size:13px;cursor:pointer;font-family:inherit}
-/* Admin gate */
 .gate{display:none;position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:9999;align-items:center;justify-content:center;padding:20px}
 .gate.on{display:flex}
 .gcard{width:100%;max-width:380px;background:#1e2329;border:1px solid #2b3139;border-radius:18px;padding:34px 26px;text-align:center}
@@ -188,7 +184,6 @@ footer a:hover{color:#f0b90b}
 .glock .em{font-size:40px;margin-bottom:8px}
 .glock .lt{margin-top:12px;padding:10px;background:rgba(0,0,0,.3);border-radius:10px;font-family:monospace;font-size:18px;font-weight:800;color:#fff}
 .gatt{text-align:center;margin-top:12px;font-size:11.5px;color:#5b6472}
-/* Admin panel */
 .ap{display:none;position:fixed;inset:0;background:#0b0e11;z-index:9998;overflow-y:auto;color:#eaecef}
 .ap.on{display:block}
 .apnav{background:#1e2329;padding:14px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;position:sticky;top:0;border-bottom:1px solid #2b3139;z-index:10}
@@ -241,7 +236,6 @@ footer a:hover{color:#f0b90b}
 .apno{background:rgba(246,70,93,.15);color:#ff8fa3}
 .apempty{text-align:center;padding:60px 20px;color:#848e9c}
 .apload{text-align:center;padding:40px;color:#848e9c}
-/* Modal */
 .modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:9999;padding:24px 14px;overflow-y:auto}
 .modal.on{display:block}
 .mbox{max-width:600px;margin:30px auto;background:#1e2329;border:1px solid #2b3139;border-radius:16px;padding:26px;position:relative;color:#eaecef}
@@ -255,7 +249,6 @@ footer a:hover{color:#f0b90b}
 .muser{background:rgba(30,136,229,.08);border:1px solid rgba(30,136,229,.3);border-radius:12px;padding:12px;margin-top:14px}
 .muser .mdrow span:first-child{color:#60a5fa}
 .blockbtn{background:linear-gradient(135deg,#f6465d,#b02c3f);color:#fff;padding:10px 18px;border:none;border-radius:10px;font-weight:800;font-size:13px;cursor:pointer;font-family:inherit;margin-top:10px;margin-right:6px}
-/* Toast */
 .toast{position:fixed;bottom:24px;right:24px;background:#1e2329;color:#fff;padding:14px 20px;border-radius:12px;font-weight:600;font-size:14px;box-shadow:0 12px 30px rgba(0,0,0,.4);z-index:99999;transform:translateY(100px);opacity:0;transition:.3s;pointer-events:none;border-left:4px solid #1e88e5}
 .toast.on{transform:translateY(0);opacity:1}
 .toast.ok{border-left-color:#0ecb81}
@@ -266,7 +259,6 @@ footer a:hover{color:#f0b90b}
 </head>
 <body>
 
-<!-- LOGIN SCREEN -->
 <div class="ls" id="loginScreen">
   <div class="lcard">
     <svg class="logo-svg" viewBox="0 0 200 200"><defs><linearGradient id="gl1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFE58F"/><stop offset=".5" stop-color="#F0B90B"/><stop offset="1" stop-color="#8B6914"/></linearGradient></defs><circle cx="100" cy="100" r="92" fill="#0b0e11" stroke="url(#gl1)" stroke-width="5"/><circle cx="100" cy="100" r="82" fill="none" stroke="url(#gl1)" stroke-width="1" opacity=".5"/><text x="100" y="140" font-family="Arial Black" font-size="120" font-weight="900" text-anchor="middle" fill="url(#gl1)">$</text></svg>
@@ -281,7 +273,6 @@ footer a:hover{color:#f0b90b}
   </div>
 </div>
 
-<!-- BLOCKED SCREEN -->
 <div class="bs" id="blockedScreen">
   <div class="bcard">
     <div class="em">🚫</div>
@@ -292,10 +283,8 @@ footer a:hover{color:#f0b90b}
   </div>
 </div>
 
-<!-- PROMO -->
 <div class="promo">🎁 আমাদের কাছ থেকে <b>$১০০ ডলার</b> রিচার্জ করলে <span class="bot">🤖 ট্রেডিং বট</span> সম্পূর্ণ ফ্রি! 🔥</div>
 
-<!-- TOP BAR -->
 <div class="topbar">
   <div class="container">
     <div>৳ নগদ: <b>০১৭৪২৩১০৭২৬</b></div>
@@ -303,7 +292,6 @@ footer a:hover{color:#f0b90b}
   </div>
 </div>
 
-<!-- HEADER -->
 <header>
   <div class="container">
     <div class="logo">
@@ -318,7 +306,6 @@ footer a:hover{color:#f0b90b}
   </div>
 </header>
 
-<!-- HERO -->
 <section class="hero">
   <div class="container">
     <svg class="hero-logo" viewBox="0 0 200 200"><defs><radialGradient id="hb" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#1e2329"/><stop offset="1" stop-color="#0b0e11"/></radialGradient><linearGradient id="gh" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFE58F"/><stop offset=".5" stop-color="#F0B90B"/><stop offset="1" stop-color="#8B6914"/></linearGradient></defs><circle cx="100" cy="100" r="96" fill="url(#hb)"/><circle cx="100" cy="100" r="92" fill="none" stroke="url(#gh)" stroke-width="4"/><path d="M 60 45 L 70 30 L 80 42 L 90 25 L 100 42 L 110 25 L 120 42 L 130 30 L 140 45 L 138 55 L 62 55 Z" fill="url(#gh)"/><text x="100" y="145" font-family="Arial Black" font-size="100" font-weight="900" text-anchor="middle" fill="url(#gh)">D</text></svg>
@@ -336,7 +323,6 @@ footer a:hover{color:#f0b90b}
   </div>
 </section>
 
-<!-- PLATFORMS -->
 <section id="platforms">
   <div class="container">
     <div class="sh"><span class="tag">সমর্থিত প্ল্যাটফর্ম</span><h2>যেসব প্ল্যাটফর্মে ডলার দিই</h2><p>নিচের যেকোনো প্ল্যাটফর্মে রিচার্জ করতে পারবেন</p></div>
@@ -344,7 +330,6 @@ footer a:hover{color:#f0b90b}
   </div>
 </section>
 
-<!-- ORDER -->
 <section class="order" id="order">
   <div class="container">
     <div class="sh"><span class="tag">অর্ডার ফর্ম</span><h2>ডলার রিচার্জ অর্ডার</h2><p>নিচের ফর্মটি পূরণ করে অর্ডার কনফার্ম করুন</p></div>
@@ -413,7 +398,6 @@ footer a:hover{color:#f0b90b}
   </div>
 </section>
 
-<!-- TRACKING -->
 <section style="background:#fff" id="track">
   <div class="container">
     <div class="sh"><span class="tag">অর্ডার ট্র্যাকিং</span><h2>আপনার অর্ডার স্ট্যাটাস দেখুন</h2></div>
@@ -428,7 +412,6 @@ footer a:hover{color:#f0b90b}
   </div>
 </section>
 
-<!-- FEATURES -->
 <section>
   <div class="container">
     <div class="sh"><span class="tag">কেন আমরা</span><h2>আমাদের বিশেষত্ব</h2></div>
@@ -443,7 +426,6 @@ footer a:hover{color:#f0b90b}
   </div>
 </section>
 
-<!-- FAQ -->
 <section class="faq" id="faq">
   <div class="container">
     <div class="sh"><span class="tag">প্রশ্নোত্তর</span><h2>সাধারণ প্রশ্ন</h2></div>
@@ -457,7 +439,6 @@ footer a:hover{color:#f0b90b}
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="container">
     <div class="fgrid">
@@ -478,7 +459,6 @@ footer a:hover{color:#f0b90b}
 
 <a href="https://wa.me/8801302627579" class="wa-f" target="_blank" rel="noopener">💬</a>
 
-<!-- ADMIN GATE -->
 <div class="gate" id="gateModal">
   <div class="gcard">
     <svg class="gate-logo" viewBox="0 0 200 200"><circle cx="100" cy="100" r="92" fill="#0b0e11" stroke="#f0b90b" stroke-width="5"/><text x="100" y="140" font-family="Arial Black" font-size="120" font-weight="900" text-anchor="middle" fill="#f0b90b">$</text></svg>
@@ -501,7 +481,6 @@ footer a:hover{color:#f0b90b}
   </div>
 </div>
 
-<!-- ADMIN PANEL -->
 <div class="ap" id="adminPanel">
   <div class="apnav">
     <div class="br">Dollar<span>Hub</span> Admin</div>
@@ -546,7 +525,6 @@ footer a:hover{color:#f0b90b}
   </div>
 </div>
 
-<!-- MODAL -->
 <div class="modal" id="detailModal">
   <div class="mbox">
     <button class="mclose" id="mClose">✕</button>
@@ -558,10 +536,9 @@ footer a:hover{color:#f0b90b}
 <div class="toast" id="toast"></div>
 
 <script type="module">
-/* ==== Firebase imports (must be at top of module) ==== */
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import { getFirestore, collection, addDoc, doc, updateDoc, getDocs, query, where, orderBy, limit, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-import { getAuth, GoogleAuthProvider, signInWithRedirect, getRedirectResult, signOut, onAuthStateChanged, setPersistence, browserLocalPersistence } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged, setPersistence, browserLocalPersistence } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyB8uP-Wqmm_zkuU2GJFKFdu-g8SObvn_ac",
@@ -575,24 +552,16 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
-
-// ==== FIX START: Login Loop Issue ====
-// মোবাইল ব্রাউজারে বারবার লগইন পেজে ফিরে আসা বন্ধ করার জন্য সেশন সেভ করা
-setPersistence(auth, browserLocalPersistence)
-  .then(() => {
-    console.log("Persistence set to LOCAL");
-  })
-  .catch((error) => {
-    console.error("Persistence error:", error);
-  });
-// ==== FIX END ====
-
 const provider = new GoogleAuthProvider();
 provider.setCustomParameters({ prompt: 'select_account' });
 
+// সেশন সেভ রাখার জন্য (মোবাইলের জন্য জরুরি)
+setPersistence(auth, browserLocalPersistence)
+  .then(() => { console.log("Persistence set to LOCAL"); })
+  .catch((error) => { console.error("Persistence error:", error); });
+
 let currentUser = null;
 
-/* ==== Helpers ==== */
 const $ = id => document.getElementById(id);
 function esc(s){ if(s===null||s===undefined)return""; return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;"); }
 function clean(s,n){ if(!s)return""; return String(s).trim().slice(0,n).replace(/[\u0000-\u001F\u007F]/g,""); }
@@ -603,7 +572,6 @@ function genOid(){ const a=new Uint8Array(4); crypto.getRandomValues(a); return 
 async function hashImg(d){ const b64=d.split(",")[1]; const bin=atob(b64); const by=new Uint8Array(bin.length); for(let i=0;i<bin.length;i++)by[i]=bin.charCodeAt(i); const h=await crypto.subtle.digest("SHA-256",by); return Array.from(new Uint8Array(h)).map(x=>x.toString(16).padStart(2,"0")).join(""); }
 async function dupCheck(h){ try{ const q=query(collection(db,"orders"),where("proofHash","==",h),limit(1)); const s=await getDocs(q); return !s.empty; }catch(e){ return false; } }
 
-/* ==== CONFIG ==== */
 const CONFIG = {
   whatsapp: "8801302627579",
   nagadNumber: "01742310726",
@@ -627,7 +595,6 @@ const CONFIG = {
   ]
 };
 
-/* ==== Render platforms ==== */
 const platGrid = $("plats");
 const selPlat = $("fPlat");
 CONFIG.platforms.forEach(p=>{
@@ -645,7 +612,6 @@ CONFIG.platforms.forEach(p=>{
   selPlat.appendChild(o);
 });
 
-/* ==== Amount calc ==== */
 function getPlat(){ return CONFIG.platforms.find(p=>p.id===selPlat.value); }
 function updateAmt(){
   const p = getPlat();
@@ -662,7 +628,6 @@ selPlat.addEventListener("change", ()=>{
   if(getPlat()){ $("st2").classList.add("a"); $("st3").classList.add("a"); }
 });
 
-/* ==== Copy nagad ==== */
 $("copyBtn").addEventListener("click", async ()=>{
   const n = CONFIG.nagadNumber;
   try{ await navigator.clipboard.writeText(n); }
@@ -671,7 +636,6 @@ $("copyBtn").addEventListener("click", async ()=>{
   setTimeout(()=>{ b.textContent="📋 নগদ নাম্বার কপি করুন"; b.style.background="#0ecb81"; }, 2000);
 });
 
-/* ==== Image upload ==== */
 let proofData=null, proofHash=null, submitting=false;
 $("proof").addEventListener("change", async (e)=>{
   const f = e.target.files[0];
@@ -706,7 +670,6 @@ $("proof").addEventListener("change", async (e)=>{
 });
 function showPWarn(m,cls){ $("pStat").style.display="block"; $("pStat").innerHTML = `<div class="pwarn ${cls}">${m}</div>`; }
 
-/* ==== Submit order ==== */
 $("orderForm").addEventListener("submit", async (e)=>{
   e.preventDefault();
   if(submitting) return;
@@ -776,7 +739,6 @@ $("orderForm").addEventListener("submit", async (e)=>{
   }
 });
 
-/* ==== Tracking ==== */
 $("trackBtn").addEventListener("click", async ()=>{
   const oid = clean($("tOid").value,20).toUpperCase();
   const ph = clean($("tPhone").value,11);
@@ -797,7 +759,6 @@ $("trackBtn").addEventListener("click", async ()=>{
   }catch(e){ res.innerHTML = `<div class="alert err on">❌ সমস্যা হয়েছে।</div>`; }
 });
 
-/* ==== FAQ ==== */
 document.querySelectorAll(".faq-q").forEach(b=>{
   b.addEventListener("click", ()=>{
     const it = b.parentElement;
@@ -807,7 +768,6 @@ document.querySelectorAll(".faq-q").forEach(b=>{
   });
 });
 
-/* ==== Auth (redirect-based for mobile) ==== */
 const loginScreen = $("loginScreen");
 const blockedScreen = $("blockedScreen");
 
@@ -830,28 +790,13 @@ function updateChip(u){
   }
 }
 
-getRedirectResult(auth).then(async (result)=>{
-  if(result && result.user){
-    const user = result.user;
-    const blocked = await checkBlocked(user.email);
-    if(blocked){ await signOut(auth); showBlocked(); return; }
-    currentUser = user;
-    hideLogin();
-    updateChip(user);
-  }
-}).catch((err)=>{
-  console.error("Redirect error:", err);
-  const eb = $("loginError");
-  eb.textContent = "❌ সাইন ইন সমস্যা: " + (err.message||"অজানা এরর");
-  eb.classList.add("on");
-});
-
+// পপআপ দিয়ে লগইন (মোবাইলের জন্য এটি সবচেয়ে ভালো)
 $("googleLoginBtn").addEventListener("click", async ()=>{
   $("loginError").classList.remove("on");
   $("googleLoginBtn").disabled = true;
   $("googleLoginBtn").innerHTML = "⏳ সাইন ইন হচ্ছে...";
   try{
-    await signInWithRedirect(auth, provider);
+    await signInWithPopup(auth, provider);
   }catch(err){
     console.error("Login error:", err);
     $("loginError").textContent = "❌ সাইন ইন সমস্যা: " + (err.message||"অজানা এরর");
@@ -885,7 +830,6 @@ onAuthStateChanged(auth, async (user)=>{
   }
 });
 
-/* ==== Admin security (3 tries = 3 hours lock) ==== */
 const PASS = atob("dGFudmlyQFZBSS9odWIhOTU=");
 const SEC = {
   MAX: 3,
@@ -1005,7 +949,6 @@ function doLogin(){
 $("gBtn").addEventListener("click", doLogin);
 $("gPass").addEventListener("keydown", e=>{ if(e.key==="Enter") doLogin(); });
 
-/* ==== Admin panel ==== */
 let allOrders = [], curRange = "today", selPlatFilter = "";
 
 function openAdmin(){ $("adminPanel").classList.add("on"); document.body.style.overflow="hidden"; loadOrders(); }
